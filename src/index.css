@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
+  --font-display: "Plus Jakarta Sans";
+  --font-header: "Space Grotesk";
   --color-bg-default: #f9f7f5;
   --color-bg-secondary: #f8f3ef;
 
@@ -15,15 +19,69 @@
   --color-item-brown: #ad9f8e;
   --color-item-green: #547862;
   --color-item-grey: #afb2b7;
+
+  --color-opacity: rgba(0, 0, 0, 0.2);
+
+  --height-mid: 20vh;
+
+  --top-hidden: -100%;
+  --top-show: 9%;
+
+  --width: 90%;
 }
+
+@layer components {
+  .body {
+    @apply flex justify-center;
+  }
+  .header {
+    @apply mx-auto text-white md:w-(--width) md:py-4 py-6 md:px-10 px-6 flex justify-between items-center self-start;
+  }
+  .brand-name {
+    @apply w-65 font-(family-name:--font-header) uppercase text-2xl font-bold tracking-wide content-center;
+  }
+
+  .navbar-box {
+    @apply leading-0 md:bg-inherit bg-amber-50 mx-auto md:w-fit w-full md:min-h-fit md:static absolute min-h-(--height-mid) flex justify-center left-0  md:border-b-0 border-b-1 border-amber-700;
+  }
+  .navbar {
+    @apply leading-0 font-(family-name:--font-header) flex md:flex-row flex-col  items-center justify-between md:gap-9 gap-8 text-lg;
+  }
+
+  .nav-title {
+    @apply leading-6 text-base uppercase font-medium content-center;
+  }
+
+  .nav-logo-box {
+    @apply p-2 inline-flex items-center justify-center bg-(--color-opacity) rounded-full;
+  }
+
+  .nav-logo-icon {
+    @apply fill-current md:w-6 w-4 md:h-6 h-4;
+  }
+
+  .nav-logo:hover {
+    @apply fill-current text-(--color-text-dark) bg-white;
+  }
+
+  .nav-actions {
+    @apply flex items-center justify-between md:gap-5 gap-2.5;
+  }
+
+  .btn-login {
+    @apply w-full text-black py-3.5 px-8 text-sm font-bold bg-white rounded-full;
+  }
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: "Plus Jakarta Sans";
+  /* , Space Grotesk, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  /* line-height: 1; */
+  /* font-weight: 400; */
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -31,7 +89,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+body {
+  @apply w-dvw leading-none bg-amber-100;
+}
+
+/* *{
+  @apply h-fit;
+} */
+/* a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
@@ -48,19 +113,20 @@ body {
   min-height: 100vh;
 }
 
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 20px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.87em 1.5em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-family: Plus Jakarta Sans;
+  background-color: #fff;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -71,6 +137,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+ */
 
 @media (prefers-color-scheme: light) {
   :root {
