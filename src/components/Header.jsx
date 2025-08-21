@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 
 function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [ilgenuOpen, setIlgenuOpen] = useState(false);
   const handleOnclickMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIlgenuOpen(!ilgenuOpen);
   }
   return (
-    <header className='w-dvw md:border-b-2 border-zinc-50 border-b-0' >
+    <header className='w-dvw lg:border-b-2 border-zinc-50 border-b-0' >
       <nav className='header' >
         <p className='brand-name'>Styleest</p>
-        <div className={`navbar-box ${isMenuOpen ? `top-(--top-show) flex-col justify-center items-center gap-8 p-4` : `top-(--top-hidden)`}`}>
+        <div className={`navbar-box ${ilgenuOpen ? `top-(--top-show-s) md:top-(--top-show-m) flex-col justify-center items-center gap-8 p-4` : `top-(--top-hidden)`}`}>
           <ul className='navbar'>
-            <li><a className='nav-title'>About us</a></li>
+            <li className="flex"><a className='nav-title'>About us</a></li>
             <li><a className='nav-title'>Collaboration</a></li>
             <li><a className='nav-title'> Product</a></li>
             <li><a className='nav-title'>Articles</a></li>
 
           </ul>
-          <a className={`w-35 md:hidden ${isMenuOpen ? `block` : `hidden`}`}>
+          <a className={`w-35 lg:hidden ${ilgenuOpen ? `block` : `hidden`}`}>
             <button className='btn-login'>Login</button>
           </a>
         </div>
@@ -40,11 +40,11 @@ function Header() {
             </svg>
           </span>
 
-          <a className='w-35 md:block hidden'>
+          <a className='w-35 lg:block hidden'>
             <button className='btn-login'>Login</button>
           </a>
-          <span className='nav-logo-box md:hidden' onClick={handleOnclickMenu}>
-            {isMenuOpen
+          <span className='nav-logo-box lg:hidden' onClick={handleOnclickMenu}>
+            {ilgenuOpen
               ? (<svg xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 className='nav-logo-icon'

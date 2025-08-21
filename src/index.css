@@ -25,9 +25,12 @@
   --height-mid: 20vh;
 
   --top-hidden: -100%;
-  --top-show: 9%;
-
+  --top-show-s: 80px;
+  --top-show-m: 92px;
   --width: 90%;
+
+  --break-point-l: 1200px;
+  --break-point-s: 765px;
 }
 
 @layer components {
@@ -35,17 +38,17 @@
     @apply flex justify-center;
   }
   .header {
-    @apply mx-auto text-white md:w-(--width) md:py-4 py-6 md:px-10 px-6 flex justify-between items-center self-start;
+    @apply lg:h-fit h-auto mx-auto text-white lg:w-(--width) lg:py-4 py-6 xl:px-10 lg:px-0 px-6 flex justify-between;
   }
   .brand-name {
-    @apply w-65 font-(family-name:--font-header) uppercase text-2xl font-bold tracking-wide content-center;
+    @apply xl:w-65 font-(family-name:--font-header) uppercase md:text-[32px] lg:text-2xl text-xl font-bold tracking-wide content-center;
   }
 
   .navbar-box {
-    @apply leading-0 md:bg-inherit bg-amber-50 mx-auto md:w-fit w-full md:min-h-fit md:static absolute min-h-(--height-mid) flex justify-center left-0  md:border-b-0 border-b-1 border-amber-700;
+    @apply leading-0 lg:bg-inherit bg-amber-50 mx-auto lg:w-fit w-full lg:min-h-fit lg:static absolute min-h-(--height-mid) flex justify-center left-0  lg:border-b-0 border-b-1 border-amber-700;
   }
   .navbar {
-    @apply leading-0 font-(family-name:--font-header) flex md:flex-row flex-col  items-center justify-between md:gap-9 gap-8 text-lg;
+    @apply leading-0 font-(family-name:--font-header) flex lg:flex-row flex-col  items-center justify-between lg:gap-9 gap-8 text-xl;
   }
 
   .nav-title {
@@ -65,7 +68,7 @@
   }
 
   .nav-actions {
-    @apply flex items-center justify-between md:gap-5 gap-2.5;
+    @apply flex items-center justify-between lg:gap-5 gap-2.5;
   }
 
   .btn-login {
@@ -85,8 +88,8 @@
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-xloothing: antialiased;
+  -moz-osx-font-xloothing: grayscale;
 }
 
 body {
