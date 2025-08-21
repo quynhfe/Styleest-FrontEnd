@@ -7,7 +7,7 @@ function App() {
   return (
     <section className="header-hero">
       <Header />
-      <body><Hero /></body>
+      <Hero />
     </section>
   )
 }
