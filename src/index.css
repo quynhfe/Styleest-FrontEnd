@@ -21,51 +21,54 @@
   --color-item-grey: #afb2b7;
 
   --color-opacity: rgba(0, 0, 0, 0.2);
+  --color-boxshadow-header: rgba(255, 255, 255, 0.6);
+  --transform-ogirin: 50% 50% 0px;
 
   --height-mid: 20vh;
 
-  --top-hidden: -100%;
   --top-show-s: 80px;
   --top-show-m: 92px;
-  --width: 90%;
 
-  --break-point-l: 1200px;
-  --break-point-s: 765px;
+  --width-header: 90%;
+  --bg-hero: /images/hero/hero.jpg;
 }
 
 @layer components {
   .body {
     @apply flex justify-center;
   }
+  .header-box {
+    @apply w-dvw border-b-[0.5px] border-(--color-boxshadow-header);
+  }
   .header {
-    @apply lg:h-fit h-auto mx-auto text-white lg:w-(--width) lg:py-4 py-6 xl:px-10 lg:px-0 px-6 flex justify-between;
+    @apply lg:h-fit h-auto mx-auto text-white lg:w-(--width-header) lg:py-4 py-8 xl:px-10 lg:px-0 px-6 flex justify-between;
   }
   .brand-name {
-    @apply xl:w-65 font-(family-name:--font-header) uppercase md:text-[32px] lg:text-2xl text-xl font-bold tracking-wide content-center;
+    @apply xl:w-65 font-(family-name:--font-header) uppercase md:text-[32px] lg:text-2xl text-2xl font-bold tracking-wide content-center;
   }
 
   .navbar-box {
-    @apply leading-0 lg:bg-inherit bg-amber-50 mx-auto lg:w-fit w-full lg:min-h-fit lg:static absolute min-h-(--height-mid) flex justify-center left-0  lg:border-b-0 border-b-1 border-amber-700;
+    @apply leading-0 lg:bg-inherit mx-auto lg:w-fit w-full lg:min-h-fit lg:static absolute min-h-(--height-mid) flex justify-center content-center left-0  lg:border-b-0 border-b-[0.5px] border-(--color-boxshadow-header);
   }
   .navbar {
     @apply leading-0 font-(family-name:--font-header) flex lg:flex-row flex-col  items-center justify-between lg:gap-9 gap-8 text-xl;
   }
 
   .nav-title {
-    @apply leading-6 text-base uppercase font-medium content-center;
+    @apply hover:text-(--color-text-dark)  hover:origin-(--transform-ogirin) leading-6 text-base uppercase font-medium content-center;
   }
 
   .nav-logo-box {
-    @apply p-2 inline-flex items-center justify-center bg-(--color-opacity) rounded-full;
+    @apply p-2 inline-flex items-center justify-center bg-(--color-opacity) hover:text-(--color-text-dark) hover:bg-white rounded-full;
   }
 
   .nav-logo-icon {
     @apply fill-current md:w-6 w-4 md:h-6 h-4;
   }
 
-  .nav-logo:hover {
+  /* .nav-logo:hover {
     @apply fill-current text-(--color-text-dark) bg-white;
-  }
+  } */
 
   .nav-actions {
     @apply flex items-center justify-between lg:gap-5 gap-2.5;
@@ -73,6 +76,26 @@
 
   .btn-login {
     @apply w-full text-black py-3.5 px-8 text-sm font-bold bg-white rounded-full;
+  }
+
+  .header-hero {
+    @apply relative z-1 h-dvh w-screen md:bg-[url('/images/hero/hero.jpg')] bg-[url('/images/hero/hero-mobile.jpg')] bg-no-repeat bg-cover bg-[center_top] md:bg-[center_-50px] overflow-hidden text-center;
+    /* background-position: center -50px; */
+  }
+
+  .hero {
+    @apply mt-50 flex flex-col gap-9 items-center;
+  }
+  .hero-title {
+    @apply text-[82px] md:text-[224px] font-bold font-(family-name:--font-header);
+  }
+
+  .hero-title-primary {
+    @apply text-2xl font-bold font-(family-name:--font-header);
+  }
+
+  .hero-info {
+    @apply text-base font-medium;
   }
 }
 
@@ -93,7 +116,7 @@
 }
 
 body {
-  @apply w-dvw leading-none bg-amber-100;
+  @apply leading-none mx-auto;
 }
 
 /* *{
@@ -144,13 +167,13 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: var(--color-bg-secondary);
     background-color: #ffffff;
   }
-  a:hover {
+  /* a:hover {
     color: #747bff;
-  }
-  button {
+  } */
+  /* button {
     background-color: #f9f9f9;
-  }
+  } */
 }

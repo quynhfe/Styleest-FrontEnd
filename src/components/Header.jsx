@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 function Header() {
-  const [ilgenuOpen, setIlgenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleOnclickMenu = () => {
-    setIlgenuOpen(!ilgenuOpen);
+    setIsMenuOpen(!isMenuOpen);
   }
   return (
-    <header className='w-dvw lg:border-b-2 border-zinc-50 border-b-0' >
+    <section className={`header-box ${isMenuOpen ? `lg:bg-inherit bg-(--color-text-dark)` : ``}`} >
       <nav className='header' >
         <p className='brand-name'>Styleest</p>
-        <div className={`navbar-box ${ilgenuOpen ? `top-(--top-show-s) md:top-(--top-show-m) flex-col justify-center items-center gap-8 p-4` : `top-(--top-hidden)`}`}>
+        <div className={`navbar-box ${isMenuOpen ? `lg:bg-inherit bg-(--color-text-dark) top-(--top-show-s) md:top-(--top-show-m) flex-col justify-center items-center gap-8 p-4 md:py-20 lg:py-0` : `lg:block hidden`}`}>
           <ul className='navbar'>
             <li className="flex"><a className='nav-title'>About us</a></li>
             <li><a className='nav-title'>Collaboration</a></li>
@@ -17,7 +17,7 @@ function Header() {
             <li><a className='nav-title'>Articles</a></li>
 
           </ul>
-          <a className={`w-35 lg:hidden ${ilgenuOpen ? `block` : `hidden`}`}>
+          <a className={`w-35 lg:hidden ${isMenuOpen ? `block` : `hidden`}`}>
             <button className='btn-login'>Login</button>
           </a>
         </div>
@@ -44,7 +44,7 @@ function Header() {
             <button className='btn-login'>Login</button>
           </a>
           <span className='nav-logo-box lg:hidden' onClick={handleOnclickMenu}>
-            {ilgenuOpen
+            {isMenuOpen
               ? (<svg xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 className='nav-logo-icon'
@@ -57,7 +57,7 @@ function Header() {
               </svg>)}
           </span>
         </div>
-      </nav></header>
+      </nav></section>
   )
 }
 

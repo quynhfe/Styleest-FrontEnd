@@ -1,12 +1,14 @@
 import './index.css'
 import Header from './components/Header'
+import Hero from './components/Hero'
 
 function App() {
 
   return (
-    <div>
+    <section className="header-hero">
       <Header />
-    </div>
+      <body><Hero /></body>
+    </section>
   )
 }
 
