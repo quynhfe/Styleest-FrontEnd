@@ -5,10 +5,12 @@ import Hero from './components/Hero'
 function App() {
 
   return (
-    <section className="header-hero">
-      <Header />
-      <Hero />
-    </section>
+    <div className="body">
+      <section className="header-hero">
+        <Header />
+        <Hero />
+      </section></div>
+
   )
 }
 

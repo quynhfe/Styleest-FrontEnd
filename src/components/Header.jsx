@@ -6,7 +6,7 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   }
   return (
-    <section className={`header-box ${isMenuOpen ? `lg:bg-inherit bg-(--color-text-dark)` : ``}`} >
+    <header className={`header-box ${isMenuOpen ? `lg:bg-inherit bg-(--color-text-dark)` : ``}`} >
       <nav className='header' >
         <p className='brand-name'>Styleest</p>
         <div className={`navbar-box ${isMenuOpen ? `lg:bg-inherit bg-(--color-text-dark) top-(--top-show-s) md:top-(--top-show-m) flex-col justify-center items-center gap-8 p-4 md:py-20 lg:py-0` : `lg:block hidden`}`}>
@@ -57,7 +57,7 @@ function Header() {
               </svg>)}
           </span>
         </div>
-      </nav></section>
+      </nav></header>
   )
 }
 

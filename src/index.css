@@ -31,31 +31,35 @@
 
   --width-header: 90%;
   --bg-hero: /images/hero/hero.jpg;
+
+  --mx-sm: 24px;
+  --mx-md: 60px;
+  --mx-lg: 100px;
 }
 
 @layer components {
   .body {
-    @apply flex justify-center;
+    @apply w-full px-(--mx-sm) md:px-(--mx-md) 2xl:px-(--mx-lg) flex flex-col items-center justify-center overflow-x-hidden;
   }
   .header-box {
-    @apply w-dvw border-b-[0.5px] border-(--color-boxshadow-header);
+    @apply border-b-[0.5px] border-(--color-boxshadow-header) w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg);
   }
   .header {
-    @apply lg:h-fit h-auto mx-auto text-white lg:w-(--width-header) lg:py-4 py-8 xl:px-10 lg:px-0 px-6 flex justify-between;
+    @apply lg:h-fit h-auto mx-auto md:mx-0  text-white  lg:py-4 py-8 flex justify-between;
   }
   .brand-name {
-    @apply xl:w-65 font-(family-name:--font-header) uppercase md:text-[32px] lg:text-2xl text-2xl font-bold tracking-wide content-center;
+    @apply xl:w-65 font-(family-name:--font-header) uppercase md:text-[32px] lg:text-2xl text-2xl font-bold tracking-wide content-center flex items-center;
   }
 
   .navbar-box {
-    @apply leading-0 lg:bg-inherit mx-auto lg:w-fit w-full lg:min-h-fit lg:static absolute min-h-(--height-mid) flex justify-center content-center left-0  lg:border-b-0 border-b-[0.5px] border-(--color-boxshadow-header);
+    @apply leading-0 lg:bg-inherit mx-auto w-full lg:w-fit lg:min-h-fit lg:static absolute min-h-(--height-mid) flex justify-center content-center left-0  lg:border-b-0 border-b-[0.5px] border-(--color-boxshadow-header);
   }
   .navbar {
     @apply leading-0 font-(family-name:--font-header) flex lg:flex-row flex-col  items-center justify-between lg:gap-9 gap-8 text-xl;
   }
 
   .nav-title {
-    @apply hover:text-(--color-text-dark)  hover:origin-(--transform-ogirin) leading-6 text-base uppercase font-medium content-center;
+    @apply text-nowrap hover:text-(--color-text-dark)  hover:origin-(--transform-ogirin) leading-6 text-base uppercase font-medium content-center;
   }
 
   .nav-logo-box {
@@ -79,23 +83,44 @@
   }
 
   .header-hero {
-    @apply relative z-1 h-dvh w-screen md:bg-[url('/images/hero/hero.jpg')] bg-[url('/images/hero/hero-mobile.jpg')] bg-no-repeat bg-cover bg-[center_top] md:bg-[center_-50px] overflow-hidden text-center;
+    @apply relative z-1 h-dvh w-screen bg-[length:140%_auto] md:bg-[url('/images/hero/hero.jpg')] bg-[url('/images/hero/hero-mobile.jpg')] bg-no-repeat md:bg-cover bg-[center_top]
+     md:bg-[center_-50px] overflow-hidden text-center;
     /* background-position: center -50px; */
   }
 
   .hero {
-    @apply mt-50 flex flex-col gap-9 items-center;
+    @apply px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) mt-[293px]
+    grid grid-flow-row grid-cols-1  gap-4
+      md:grid-cols-3 md:gap-y-11 md:gap-x-22
+      lg:gap-y-20
+      items-center  text-(--color-bg-secondary) lg:mt-[49px];
   }
   .hero-title {
-    @apply text-[82px] md:text-[224px] font-bold font-(family-name:--font-header);
+    @apply h-fit md:leading-[170px] 
+    md:col-span-full md:row-start-2 lg:row-start-3 text-[82px] leading-[90.2px] md:text-[154px]  lg:text-[224px] font-bold font-(family-name:--font-header);
   }
 
   .hero-title-primary {
-    @apply text-2xl font-bold font-(family-name:--font-header);
+    @apply text-2xl lg:col-span-2 lg:text-wrap md:text-[28px] lg:text-[32px] font-bold font-(family-name:--font-header) text-nowrap;
   }
 
   .hero-info {
-    @apply text-base font-medium;
+    @apply text-base font-medium w-fit lg:text-lg;
+  }
+
+  .text-first {
+    @apply hidden  lg:col-span-full lg:col-start-3 lg:col-end-4  lg:flex lg:flex-col gap-4 text-right;
+  }
+
+  .text-second {
+    @apply flex flex-col gap-4 items-center text-center w-fit
+    md:col-span-1 md:text-left md:items-start;
+  }
+
+  .box-btn-see {
+    @apply w-45 h-[59px] 
+    md:col-span-1 md:col-start-3
+    mx-auto md:mx-0 mt-[20px] md:mt-0;
   }
 }
 
