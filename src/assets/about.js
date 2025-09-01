@@ -1,0 +1,18 @@
+export const aboutData = [
+  {
+    title: "TAYSON front side",
+    imageUrl: "/images/about/taysonf.jpg",
+  },
+  {
+    title: "TAYSON behind side",
+    imageUrl: "/images/about/taysonb.jpg",
+  },
+  {
+    title: "COUTU front side",
+    imageUrl: "/images/about/coutuf.jpg",
+  },
+  {
+    title: "COUTU behind side",
+    imageUrl: "/images/about/coutub.jpg",
+  },
+];

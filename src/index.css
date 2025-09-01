@@ -38,8 +38,8 @@
 }
 
 @layer components {
-  .body {
-    @apply w-full px-(--mx-sm) md:px-(--mx-md) 2xl:px-(--mx-lg) flex flex-col items-center justify-center overflow-x-hidden;
+  .app {
+    @apply w-full bg-(--color-bg-default) flex flex-col items-center justify-center overflow-hidden p-0 m-0;
   }
   .header-box {
     @apply border-b-[0.5px] border-(--color-boxshadow-header) w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg);
@@ -83,122 +83,105 @@
   }
 
   .header-hero {
-    @apply relative z-1 h-dvh w-screen bg-[length:140%_auto] md:bg-[url('/images/hero/hero.jpg')] bg-[url('/images/hero/hero-mobile.jpg')] bg-no-repeat md:bg-cover bg-[center_top]
-     md:bg-[center_-50px] overflow-hidden text-center;
-    /* background-position: center -50px; */
+    @apply relative z-1 h-200   w-full   
+     /* bg-[center_top]
+     lg:bg-[center_top] */
+     /* lg:bg-[left_-100px_top_-50px]  */
+      text-center
+      /* md:bg-[left_-110px_top_-40px]
+      md:bg-[length:200%_cover]; */;
   }
-
+  .img-header-hero {
+    @apply absolute inset-0 z-[-1] h-full w-full md:object-left-top;
+  }
   .hero {
-    @apply px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) mt-[293px]
+    @apply h-max px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) mt-[293px]
     grid grid-flow-row grid-cols-1  gap-4
-      md:grid-cols-3 md:gap-y-11 md:gap-x-22
-      lg:gap-y-20
-      items-center  text-(--color-bg-secondary) lg:mt-[49px];
+      md:grid-cols-4 md:gap-y-11 md:gap-x-22
+      lg:gap-y-4 lg:grid-cols-5 xl:gap-y-4
+      items-center   text-(--color-bg-secondary) md:mt-85 lg:mt-[49px] xl:mt-[77px] xl:mx-5;
   }
   .hero-title {
-    @apply h-fit md:leading-[170px] 
-    md:col-span-full md:row-start-2 lg:row-start-3 text-[82px] leading-[90.2px] md:text-[154px]  lg:text-[224px] font-bold font-(family-name:--font-header);
+    @apply md:leading-[170px]
+    md:col-span-full md:row-start-2 lg:row-start-3 text-[82px] leading-[90.2px] lg:leading-[246.4px] md:text-[154px]  lg:text-[224px] xl:row-end-5  font-bold font-(family-name:--font-header) xl:text-nowrap;
   }
 
   .hero-title-primary {
-    @apply text-2xl lg:col-span-2 lg:text-wrap md:text-[28px] lg:text-[32px] font-bold font-(family-name:--font-header) text-nowrap;
+    @apply text-2xl lg:leading-[45px] lg:col-span-2 lg:text-wrap md:text-[28px] lg:text-[32px] font-bold font-(family-name:--font-header) text-nowrap;
   }
 
   .hero-info {
-    @apply text-base font-medium w-fit lg:text-lg;
+    @apply text-base font-medium xl:text-lg;
   }
 
   .text-first {
-    @apply hidden  lg:col-span-full lg:col-start-3 lg:col-end-4  lg:flex lg:flex-col gap-4 text-right;
+    @apply hidden w-full md:col-span-1  lg:flex lg:flex-col  lg:col-start-5  gap-4 justify-end text-right lg:mb-16 lg:justify-items-end items-end;
   }
 
   .text-second {
-    @apply flex flex-col gap-4 items-center text-center w-fit
-    md:col-span-1 md:text-left md:items-start;
+    @apply flex flex-col gap-4 items-center text-center
+    md:col-span-1 md:col-start-1 md:col-end-3 md:text-left md:items-start
+    lg:col-span-2 lg:col-start-1 lg:col-end-4  xl:col-start-1 xl:col-end-3;
   }
 
   .box-btn-see {
-    @apply w-45 h-[59px] 
-    md:col-span-1 md:col-start-3
-    mx-auto md:mx-0 mt-[20px] md:mt-0;
+    @apply md:col-span-2 md:col-end-5
+    mx-auto md:mx-0 mt-[20px] md:mt-0
+    md:flex md:justify-end h-full md:items-end
+    lg:col-start-4 lg:col-span-2;
+  }
+
+  .about-us {
+    @apply w-full bg-none;
+  }
+
+  .about-title {
+    @apply bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) py-15 text-center flex flex-col gap-6  justify-center font-bold
+    md:py-20 md:text-start;
+  }
+  .about-title h2 {
+    @apply md:text-start tracking-[3.2px] text-(--color-text-brown) font-bold text-base uppercase;
+  }
+
+  .about-des {
+    @apply md:text-[32px]  md:leading-[44.8px]  text-(--color-text-dark) font-(family-name:--font-header)  text-2xl mb-10 leading-[33.6px];
+  }
+
+  .about-tayson {
+    @apply lg:grid-rows-5 lg:grid-cols-9 lg:pt-0 md:pb-0 grid grid-rows-7 grid-cols-5 md:grid-rows-6 md:grid-cols-7 h-[687px] lg:h-[850px] py-15 px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg);
+  }
+  .img-taysonf {
+    @apply lg:col-span-4 lg:row-span-4 w-full row-span-4 col-span-full  row-start-1 md:row-span-3  md:col-span-2;
+  }
+
+  .img-taysonf img {
+    @apply lg:w-[486px] lg:h-[600px] w-full h-full object-top object-cover md:object-scale-down md:object-left-top;
+  }
+  .img-taysonb {
+    @apply row-span-2 lg:col-span-3 col-span-2 md:col-start-6  md:mb-5;
+  }
+  .img-taysonb img {
+    @apply w-full h-[80%] lg:w-[383px] lg:h-[326px] md:h-full  object-top object-cover;
+  }
+  .tayson-des {
+    @apply lg:col-span-5 md:text-start  md:col-span-4 md:col-start-4 md:row-start-3 md:row-span-3 flex flex-col gap-3.75 lg:gap-6 text-center row-span-2 col-span-full;
+  }
+
+  .tayson-des h3 {
+    @apply lg:text-[32px] text-(--color-text-dark) font-bold text-xl m-0.25;
+  }
+  .tayson-des-p {
+    @apply lg:text-lg text-(--color-text-dark-primary) font-medium leading-[25.6px];
+  }
+
+  .see-collection {
+    @apply mt-4.25 text-(--color-text-dark) font-bold underline underline-offset-8;
   }
 }
 
 :root {
   font-family: "Plus Jakarta Sans";
-  /* , Space Grotesk, system-ui, Avenir, Helvetica, Arial, sans-serif; */
-  /* line-height: 1; */
-  /* font-weight: 400; */
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: black;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-xloothing: antialiased;
-  -moz-osx-font-xloothing: grayscale;
-}
-
-body {
-  @apply leading-none mx-auto;
-}
-
-/* *{
-  @apply h-fit;
-} */
-/* a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 20px;
-  border: 1px solid transparent;
-  padding: 0.87em 1.5em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: Plus Jakarta Sans;
-  background-color: #fff;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
- */
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: var(--color-bg-secondary);
-    background-color: #ffffff;
-  }
-  /* a:hover {
-    color: #747bff;
-  } */
-  /* button {
-    background-color: #f9f9f9;
-  } */
+  background-color: var(--color-bg-default);
 }

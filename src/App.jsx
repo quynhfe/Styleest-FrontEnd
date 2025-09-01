@@ -1,17 +1,33 @@
-import './index.css'
-import Header from './components/Header'
-import Hero from './components/Hero'
+import "./index.css";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import AboutUs from "./components/AboutUs";
 
 function App() {
-
   return (
-    <div className="body">
-      <section className="header-hero">
-        <Header />
-        <Hero />
-      </section></div>
-
-  )
+    <div className='app'>
+      <section className='header-hero'>
+        <picture className='img-header-hero'>
+          <source
+            srcSet='/images/hero/hero.jpg'
+            media='(min-width: 768px)'
+          />
+          <img
+            src='/images/hero/hero-mobile.jpg'
+            alt='Hero'
+            className='h-full w-full object-cover'
+          />
+        </picture>
+        <div className='relative z-[1]'>
+          <Header />
+          <Hero />
+        </div>
+      </section>
+      <section>
+        <AboutUs></AboutUs>
+      </section>
+    </div>
+  );
 }
 
-export default App
+export default App;
