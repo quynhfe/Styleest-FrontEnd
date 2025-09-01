@@ -39,7 +39,7 @@
 
 @layer components {
   .app {
-    @apply w-full bg-(--color-bg-default) flex flex-col items-center justify-center overflow-hidden p-0 m-0;
+    @apply w-full bg-(--color-bg-default) flex flex-col items-center justify-center  p-0 m-0;
   }
   .header-box {
     @apply border-b-[0.5px] border-(--color-boxshadow-header) w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg);
@@ -132,11 +132,12 @@
   }
 
   .about-us {
-    @apply w-full bg-none;
+    @apply relative w-full bg-none;
   }
 
   .about-title {
-    @apply bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) py-15 text-center flex flex-col gap-6  justify-center font-bold
+    @apply lg:sticky lg:top-0 lg:z-1 
+      bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) py-15 text-center flex flex-col gap-6  justify-center font-bold
     md:py-20 md:text-start;
   }
   .about-title h2 {
@@ -144,7 +145,7 @@
   }
 
   .about-des {
-    @apply md:text-[32px]  md:leading-[44.8px]  text-(--color-text-dark) font-(family-name:--font-header)  text-2xl mb-10 leading-[33.6px];
+    @apply lg:text-5xl lg:leading-[67.2px] md:text-[32px]  md:leading-[44.8px]  text-(--color-text-dark) font-(family-name:--font-header)  text-2xl mb-10 leading-[33.6px];
   }
 
   .about-tayson {

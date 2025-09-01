@@ -1,19 +1,21 @@
 import React from "react";
 import { aboutData } from "../assets/about";
-
+import Line from "./Line";
+import Paragraph from "./Line";
+const aboutUsDescription =
+  "We believe that style is a powerful form of self-expression. Our journey began with a simple yet profound vision – to curate a diverse collection of fashion-forward pieces that empower individuals to embrace their uniqueness.";
 function AboutUs() {
   return (
     <div className='about-us'>
-      <div className='about-title'>
-        <h2>(About us)</h2>
-        <p className='about-des'>
-          We believe that style is a powerful form of self-expression. Our
-          journey began with a simple yet profound vision – to curate a diverse
-          collection of fashion-forward pieces that empower individuals to
-          embrace their uniqueness.
-        </p>
+      <div className='relative h-400'>
+        <div className='about-title sticky top-0 bottom-0 z-1 bg-(--color-bg-secondary)'>
+          <h2>(About us)</h2>
+          <Paragraph value={aboutUsDescription} />
+          {/* <Line value={aboutUsDescription} /> */}
+        </div>
       </div>
-      <div className='md:absolute md:z-1 md:top-285 lg:top-250'>
+      <div className='h-400 w-full hidden lg:block lg:top-0.75 bg-(--color-bg-secondary) absolute z-0'></div>
+      <div className='md:absolute md:z-1 md:top-285 lg:top-380'>
         <div className='about-tayson'>
           <div className='img-taysonf md:row-start-3 md:mt-3.75 md:row-span-4 lg:row-start-2 lg:flex lg:justify-items-start'>
             <img
@@ -26,7 +28,7 @@ function AboutUs() {
               src={aboutData[1].imageUrl}
               alt={aboutData[1].title}></img>
           </div>
-          <div className='tayson-des md:mt-17.5 lg:col-start-5 lg:row-start-4 lg:mt-7'>
+          <div className='tayson-des md:mt-17.5 lg:col-end-10 lg:ml-[68px]  lg:row-start-4 lg:mt-7'>
             <h3>STYLEEST collaborates with TAYSON</h3>
             <p className='tayson-des-p'>
               The collection is comprised of hoodies, jerseys, shorts and

@@ -2,7 +2,7 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className='hero'>
+    <div className='hero lg:absolute lg:z-1'>
       <div className='text-first  '>
         <p className='hero-title-primary md:w-[286px]'>
           Crafting stories with every stitch{" "}
