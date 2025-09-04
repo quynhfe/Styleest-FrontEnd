@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Printed Longslaves T-Shirt",
+    "price": 15.99,
+    "salePrice": null,
+    "colors": ["brown", "green", "black"],
+    "img": "/images/new-arrivals/1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Printed Osaka T-Shirt",
+    "price": 14.99,
+    "salePrice": 13.99,
+    "colors": ["brown", "grey", "white", "black"],
+    "img": "/images/new-arrivals/2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "KIIKII Print T-Shrit",
+    "price": 13.99,
+    "salePrice": null,
+    "colors": ["brown", "white", "black"],
+    "img": "/images/new-arrivals/3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Three Longslaves T-Shirt",
+    "price": 15.99,
+    "salePrice": null,
+    "colors": ["brown", "blue"],
+    "img": "/images/new-arrivals/4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Bone Printed T-Shirt",
+    "price": 20.99,
+    "salePrice": 18.99,
+    "colors": ["brown", "green", "white", "black"],
+    "img": "/images/new-arrivals/5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Three Printed T-Shirt",
+    "price": 12.99,
+    "salePrice": 11.99,
+    "colors": ["brown", "black"],
+    "img": "/images/new-arrivals/6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Original Printed T-Shirt",
+    "price": 20.99,
+    "salePrice": null,
+    "colors": ["brown", "green", "grey"],
+    "img": "/images/new-arrivals/7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "705 Border T-Shirt",
+    "price": 15.99,
+    "salePrice": 22.99,
+    "colors": ["green", "white", "black"],
+    "img": "/images/new-arrivals/8.jpg"
+  }
+]

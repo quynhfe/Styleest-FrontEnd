@@ -19,9 +19,13 @@
   --color-item-brown: #ad9f8e;
   --color-item-green: #547862;
   --color-item-grey: #afb2b7;
+  --color-item-blue: #1e3757;
+  --color-border-item: #eeeeee;
+  --color-border-item-active: #b2916f;
 
   --color-opacity: rgba(0, 0, 0, 0.2);
   --color-boxshadow-header: rgba(255, 255, 255, 0.6);
+  --color-boxshadow-items-color: #0000001f 0px 2px 6px 0px;
   --transform-ogirin: 50% 50% 0px;
 
   --height-mid: 20vh;
@@ -135,17 +139,17 @@
     @apply relative w-full bg-none;
   }
 
-  .about-title {
+  .introdution {
     @apply lg:sticky lg:top-0 lg:z-1 
       bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) py-15 text-center flex flex-col gap-6  justify-center font-bold
     md:py-20 md:text-start;
   }
-  .about-title h2 {
+  .introdution-title {
     @apply md:text-start tracking-[3.2px] text-(--color-text-brown) font-bold text-base uppercase;
   }
 
   .about-des {
-    @apply lg:text-5xl lg:leading-[67.2px] md:text-[32px]  md:leading-[44.8px]  text-(--color-text-dark) font-(family-name:--font-header)  text-2xl mb-10 leading-[33.6px];
+    @apply relative  lg:leading-[67.2px] md:text-[32px] lg:text-5xl  md:leading-[44.8px]  text-(--color-text-dark) font-(family-name:--font-header)  text-2xl mb-10 leading-[33.6px];
   }
 
   .about-tayson {
@@ -176,10 +180,97 @@
   }
 
   .see-collection {
-    @apply mt-4.25 text-(--color-text-dark) font-bold underline underline-offset-8;
+    @apply mt-4.25 text-(--color-text-dark) font-bold underline decoration-1 underline-offset-8;
+  }
+
+  .new-arrivials {
+    @apply max-md:mt-5 md:top-300 relative lg:z-0 lg:top-365 bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) text-center gap-6 items-center justify-center font-bold
+    md:py-20 lg:pb-25 md:pb-20 pb-15;
+  }
+  .new-arrivials-title-primary {
+    @apply mt-5.5 font-(family-name:--font-header) text-(--color-text-dark) gap-4 font-bold text-2xl md:text-[32px] lg:text-5xl;
+  }
+
+  .total-items {
+    @apply text-(--color-text-grey);
+  }
+
+  .btn-next {
+    @apply absolute  top-1/2 -translate-y-1/2 hover:text-(--color-text-dark-primary)  hover:bg-(--color-boxshadow-header) shadow-md p-2 rounded-full z-10 flex items-center justify-center bg-(--color-opacity) transition md:hidden;
+  }
+  .list-new-arrivials {
+    @apply w-full mt-[32px] flex gap-5 md:grid md:grid-cols-3  md:grid-rows-3  xl:grid-cols-4  xl:grid-rows-2 md:gap-6  transition-transform duration-500 ease-in-out;
+  }
+
+  .new-arrivial {
+    @apply max-md:w-[258px]
+    lg:w-[282px]
+    w-full
+     md:col-span-1 md:row-span-1 flex flex-col items-center justify-center;
+  }
+
+  .new-arrivial-img-box {
+    @apply h-[328px] w-full overflow-hidden flex justify-start;
+  }
+  .new-arrivial-img {
+    @apply w-full h-full object-cover object-top transition-transform duration-300 origin-top hover:scale-120;
+  }
+
+  .btn-add-to-card-box {
+    @apply h-[47px] mx-auto w-full absolute z-1 bottom-[26px] flex  text-(--color-text-dark) items-center justify-center;
+  }
+
+  .btn-add-to-card {
+    @apply h-[47px] mx-auto w-[calc(100%-40px)] bottom-[26px] flex  bg-white rounded-[200px] text-(--color-text-dark) items-center justify-center;
+  }
+
+  .new-arrivial-name {
+    @apply lg:text-xl text-(--color-text-dark) font-(family-name:--font-header);
+  }
+  .new-arrivial-des {
+    @apply w-full flex flex-col gap-2 mt-6 text-start items-start;
+  }
+  .new-arrivial-price {
+    @apply flex gap-3 font-medium text-sm lg:text-[16px];
+  }
+
+  .price {
+    @apply text-(--color-text-dark);
+  }
+  .color {
+    @apply flex justify-center items-center w-5 h-5 rounded-full border-1;
+  }
+  .sale-price {
+    @apply text-(--color-text-brown) line-through;
+  }
+  .list-color {
+    @apply flex gap-1.5 items-center py-1.5;
+  }
+
+  .banner {
+    @apply h-[622px] xl:h-[800px] relative md:top-300 lg:top-365;
+  }
+
+  .banner-img {
+    @apply h-full w-full object-top object-cover;
+  }
+
+  .banner-des {
+    @apply xl:grid-rows-3 xl:grid-cols-3 md:grid md:grid-cols-2 md:grid-rows-2 top-82 md:top-104.75 xl:top-120.25 text-white absolute z-10  px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) flex flex-col gap-6 justify-center items-center text-center;
+  }
+
+  .box-btn-explore {
+    @apply xl:row-start-3 xl:col-start-3 right-0 md:justify-end flex items-center justify-center w-full h-[59px] overflow-hidden;
+  }
+
+  .banner-text-first {
+    @apply xl:leading-[86.4px] xl:text-7xl xl:col-span-2 xl:row-span-3  md:text-start md:text-[38px] md:leading-[45.6px] md:col-span-1 md:row-span-2 font-bold text-[28px]  leading-[33.6px];
+  }
+
+  .banner-text-second {
+    @apply xl:row-start-2 xl:col-start-3 md:text-end font-medium text-[16px] xl:text-lg mb-2;
   }
 }
-
 :root {
   font-family: "Plus Jakarta Sans";
   color-scheme: light dark;

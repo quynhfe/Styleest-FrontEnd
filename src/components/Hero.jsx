@@ -24,7 +24,7 @@ function Hero() {
       </div>
 
       <a className='box-btn-see'>
-        <button className='btn-login lg:text-[16px] w-45 h-[59px] md:ml-1'>
+        <button className='btn-login text-[16px] w-45 h-[59px] md:ml-1'>
           See Collection
         </button>
       </a>

@@ -2,20 +2,21 @@ import React from "react";
 import { aboutData } from "../assets/about";
 import Line from "./Line";
 import Paragraph from "./Line";
+
 const aboutUsDescription =
   "We believe that style is a powerful form of self-expression. Our journey began with a simple yet profound vision – to curate a diverse collection of fashion-forward pieces that empower individuals to embrace their uniqueness.";
 function AboutUs() {
   return (
     <div className='about-us'>
-      <div className='relative h-400'>
-        <div className='about-title sticky top-0 bottom-0 z-1 bg-(--color-bg-secondary)'>
-          <h2>(About us)</h2>
+      <div className='relative lg:h-400 h-fit'>
+        <div className=' introdution lg:sticky relative top-0 bottom-0 z-1 bg-(--color-bg-secondary)'>
+          <h2 className='introdution-title'>(About us)</h2>
           <Paragraph value={aboutUsDescription} />
           {/* <Line value={aboutUsDescription} /> */}
         </div>
       </div>
       <div className='h-400 w-full hidden lg:block lg:top-0.75 bg-(--color-bg-secondary) absolute z-0'></div>
-      <div className='md:absolute md:z-1 md:top-285 lg:top-380'>
+      <div className='md:absolute md:z-1 md:top-80 lg:top-380'>
         <div className='about-tayson'>
           <div className='img-taysonf md:row-start-3 md:mt-3.75 md:row-span-4 lg:row-start-2 lg:flex lg:justify-items-start'>
             <img
@@ -38,7 +39,7 @@ function AboutUs() {
             <p className='see-collection '>See Collection</p>
           </div>
         </div>
-        <div className='about-tayson md:pt-10'>
+        <div className='about-tayson md:pt-10 lg:mt-25.75'>
           <div className='img-taysonf md:col-end-8 lg:col-end-10 lg:flex lg:justify-end'>
             <img
               src={aboutData[2].imageUrl}

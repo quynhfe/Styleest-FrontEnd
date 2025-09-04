@@ -33,7 +33,6 @@ function Header() {
             </li>
           </ul>
           <a className={`w-35 lg:hidden ${isMenuOpen ? `block` : `hidden`}`}>
-            {" "}
             <button className='btn-login'>Login</button>
           </a>
         </div>

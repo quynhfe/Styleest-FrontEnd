@@ -2,6 +2,8 @@ import "./index.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import AboutUs from "./components/AboutUs";
+import NewArrival from "./components/NewArrival";
+import Banner from "./components/Banner";
 
 function App() {
   return (
@@ -25,6 +27,12 @@ function App() {
       </section>
       <section>
         <AboutUs></AboutUs>
+      </section>
+      <section className='w-full'>
+        <NewArrival></NewArrival>
+      </section>
+      <section className='w-full'>
+        <Banner />
       </section>
     </div>
   );
