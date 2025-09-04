@@ -205,7 +205,9 @@
 
   .new-arrivial {
     @apply max-md:w-[258px]
-    lg:w-[282px]
+    xl:w-[282px]
+    lg:max-w-[391px]
+    
     w-full
      md:col-span-1 md:row-span-1 flex flex-col items-center justify-center;
   }
