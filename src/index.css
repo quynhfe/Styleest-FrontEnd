@@ -39,6 +39,7 @@
   --mx-sm: 24px;
   --mx-md: 60px;
   --mx-lg: 100px;
+  --mx-xl: 113px;
 }
 
 @layer components {
@@ -46,7 +47,7 @@
     @apply w-full bg-(--color-bg-default) flex flex-col items-center justify-center  p-0 m-0;
   }
   .header-box {
-    @apply border-b-[0.5px] border-(--color-boxshadow-header) w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg);
+    @apply border-b-[0.5px] border-(--color-boxshadow-header) w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
   }
   .header {
     @apply lg:h-fit h-auto mx-auto md:mx-0  text-white  lg:py-4 py-8 flex justify-between;
@@ -99,7 +100,7 @@
     @apply absolute inset-0 z-[-1] h-full w-full md:object-left-top;
   }
   .hero {
-    @apply h-max px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) mt-[293px]
+    @apply h-max px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) mt-[293px]
     grid grid-flow-row grid-cols-1  gap-4
       md:grid-cols-4 md:gap-y-11 md:gap-x-22
       lg:gap-y-4 lg:grid-cols-5 xl:gap-y-4
@@ -141,7 +142,7 @@
 
   .introdution {
     @apply lg:sticky lg:top-0 lg:z-1 
-      bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) py-15 text-center flex flex-col gap-6  justify-center font-bold
+      bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) py-15 text-center flex flex-col gap-6  justify-center font-bold
     md:py-20 md:text-start;
   }
   .introdution-title {
@@ -153,7 +154,7 @@
   }
 
   .about-tayson {
-    @apply lg:grid-rows-5 lg:grid-cols-9 lg:pt-0 md:pb-0 grid grid-rows-7 grid-cols-5 md:grid-rows-6 md:grid-cols-7 h-[687px] lg:h-[850px] py-15 px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg);
+    @apply lg:grid-rows-5 lg:grid-cols-9 lg:pt-0 md:pb-0 grid grid-rows-7 grid-cols-5 md:grid-rows-6 md:grid-cols-7 h-[687px] lg:h-[850px] py-15 px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
   }
   .img-taysonf {
     @apply lg:col-span-4 lg:row-span-4 w-full row-span-4 col-span-full  row-start-1 md:row-span-3  md:col-span-2;
@@ -184,7 +185,7 @@
   }
 
   .new-arrivials {
-    @apply max-md:mt-5 md:top-300 relative lg:z-0 lg:top-365 bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) text-center gap-6 items-center justify-center font-bold
+    @apply max-md:mt-5 md:top-300 relative lg:z-0 lg:top-365 bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) text-center gap-6 items-center justify-center font-bold
     md:py-20 lg:pb-25 md:pb-20 pb-15;
   }
   .new-arrivials-title-primary {
@@ -256,7 +257,7 @@
   }
 
   .banner-des {
-    @apply xl:grid-rows-3 xl:grid-cols-3 md:grid md:grid-cols-2 md:grid-rows-2 top-82 md:top-104.75 xl:top-120.25 text-white absolute z-10  px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-lg) flex flex-col gap-6 justify-center items-center text-center;
+    @apply xl:grid-rows-3 xl:grid-cols-3 md:grid md:grid-cols-2 md:grid-rows-2 top-82 md:top-104.75 xl:top-120.25 text-white absolute z-10  px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) flex flex-col gap-6 justify-center items-center text-center;
   }
 
   .box-btn-explore {
