@@ -3,24 +3,24 @@
     "id": 1,
     "name": "Men",
     "description": "The collection is comprised of hoodies, jerseys, shorts and accessories that feature the Parisian club’s branding overlaid by. ",
-    "img": "/images/new-arrivals/6.jpg"
+    "img": "/images/categories/men.jpg"
   },
   {
     "id": 2,
     "name": "Women",
     "description": "The collection is comprised of hoodies, jerseys, shorts and accessories that feature the Parisian club’s branding overlaid by. ",
-    "img": "/images/new-arrivals/6.jpg"
+    "img": "/images/categories/woman.jpg"
   },
   {
     "id": 3,
     "name": "Kids",
     "description": "The collection is comprised of hoodies, jerseys, shorts and accessories that feature the Parisian club’s branding overlaid by. ",
-    "img": "/images/new-arrivals/6.jpg"
+    "img": "/images/categories/kid.jpg"
   },
   {
     "id": 4,
     "name": "Sports",
     "description": "The collection is comprised of hoodies, jerseys, shorts and accessories that feature the Parisian club’s branding overlaid by. ",
-    "img": "/images/new-arrivals/6.jpg"
+    "img": "/images/categories/sport.jpg"
   }
 ]

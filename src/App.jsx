@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import AboutUs from "./components/AboutUs";
 import NewArrival from "./components/NewArrival";
 import Banner from "./components/Banner";
+import Categories from "./components/Categories";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
       </section>
       <section className='w-full'>
         <Banner />
+      </section>
+      <section>
+        <Categories />
       </section>
     </div>
   );

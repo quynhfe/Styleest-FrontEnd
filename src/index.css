@@ -84,7 +84,7 @@
   }
 
   .btn-login {
-    @apply w-full text-black py-3.5 px-8 text-sm font-bold bg-white rounded-full;
+    @apply flex items-center justify-center w-full text-black py-3.5 px-8 text-sm font-bold bg-white rounded-full;
   }
 
   .header-hero {
@@ -137,7 +137,7 @@
   }
 
   .about-us {
-    @apply relative w-full bg-none;
+    @apply relative w-full;
   }
 
   .introdution {
@@ -186,7 +186,7 @@
 
   .new-arrivials {
     @apply max-md:mt-5 md:top-300 relative lg:z-0 lg:top-365 bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) text-center gap-6 items-center justify-center font-bold
-    md:py-20 lg:pb-25 md:pb-20 pb-15;
+    md:py-20 py-15 lg:pb-25 md:pb-20 pb-15;
   }
   .new-arrivials-title-primary {
     @apply mt-5.5 font-(family-name:--font-header) text-(--color-text-dark) gap-4 font-bold text-2xl md:text-[32px] lg:text-5xl;
@@ -273,10 +273,43 @@
   .banner-text-second {
     @apply xl:row-start-2 xl:col-start-3 md:text-end font-medium text-[16px] xl:text-lg mb-2;
   }
+
+  .categories {
+    @apply lg:py-30 md:py-20 md:relative md:top-300 lg:top-365 md:text-start text-center pt-15 pb-7 px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
+  }
+
+  .list-category {
+    @apply md:grid  md:grid-rows-4 gap-6;
+  }
+
+  .category {
+    @apply xl:overflow-hidden xl:relative lg:grid-cols-2 flex flex-col md:row-span-1 md:grid md:grid-cols-3 md:grid-flow-col-dense  items-center justify-center;
+  }
+
+  .category-img-box {
+    @apply xl:w-full xl:h-full xl:row-span-2 lg:h-[272px] md:h-[221px] md:w-full md:col-span-1 xl:overflow-hidden  h-[311px] w-[384px];
+  }
+
+  .category-img {
+    @apply h-full w-full object-cover xl:transition-transform xl:duration-300  xl:group-hover:scale-110;
+  }
+
+  .category-info {
+    @apply xl:group-hover:pb-6.25
+     xl:text-white xl:m-0 xl:px-6 lg:col-span-1 md:col-span-2 md:row-span-1  text-(--color-text-dark);
+  }
+
+  .category-name {
+    @apply xl:text-[32px] mt-6 mb-2.5 font-bold text-[20px];
+  }
+
+  .category-des {
+    @apply xl:text-lg mb-8 font-medium xl:leading-[28.8px] leading-[25.6px];
+  }
 }
 :root {
   font-family: "Plus Jakarta Sans";
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: var(--color-bg-default);
+  background-color: #f9f7f5;
 }
