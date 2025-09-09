@@ -306,6 +306,50 @@
   .category-des {
     @apply xl:text-lg mb-8 font-medium xl:leading-[28.8px] leading-[25.6px];
   }
+
+  .feedback {
+    @apply h-fit w-full py-15 bg-(--color-bg-secondary) px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
+  }
+  .a-feedback {
+    @apply md:mx-20 mt-15.75 text-center grid grid-cols-2 grid-flow-row-dense h-fit;
+  }
+
+  .feedback-content {
+    @apply col-span-full  text-(--color-text-dark-primary);
+  }
+  .feedback-content-title {
+    @apply mb-4 leading-[32px] text-[20px] font-bold;
+  }
+
+  .feedback-content-des {
+    @apply mb-8 font-medium;
+  }
+  .feedback-img {
+    @apply w-full flex justify-end col-start-2 col-span-1;
+  }
+
+  .feedback-img img {
+    @apply w-12 h-12 object-cover;
+  }
+
+  .feedback-customer {
+    @apply flex gap-3  col-span-1;
+  }
+
+  .cus-info {
+    @apply text-start font-medium;
+  }
+
+  .cus-name {
+    @apply text-(--color-text-dark);
+  }
+
+  .cus-job {
+    @apply text-sm text-(--color-text-grey);
+  }
+  .cus-avt img {
+    @apply w-12 h-12 rounded-full overflow-hidden;
+  }
 }
 :root {
   font-family: "Plus Jakarta Sans";

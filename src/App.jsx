@@ -5,10 +5,11 @@ import AboutUs from "./components/AboutUs";
 import NewArrival from "./components/NewArrival";
 import Banner from "./components/Banner";
 import Categories from "./components/Categories";
+import Feedback from "./components/Feedback";
 
 function App() {
   return (
-    <div className='app'>
+    <div className='app '>
       <section className='header-hero'>
         <picture className='img-header-hero'>
           <source
@@ -37,6 +38,9 @@ function App() {
       </section>
       <section>
         <Categories />
+      </section>
+      <section>
+        <Feedback />
       </section>
     </div>
   );
