@@ -308,7 +308,8 @@
   }
 
   .feedback {
-    @apply h-fit w-full py-15 bg-(--color-bg-secondary) px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
+    @apply w-full py-15 bg-(--color-bg-secondary) 
+    px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
   }
   .a-feedback {
     @apply md:mx-20 mt-15.75 text-center grid grid-cols-2 grid-flow-row-dense h-fit;
@@ -356,4 +357,8 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #f9f7f5;
+}
+html,
+body {
+  overflow-x: hidden;
 }

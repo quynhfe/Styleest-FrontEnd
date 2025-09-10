@@ -39,7 +39,7 @@ function App() {
       <section>
         <Categories />
       </section>
-      <section>
+      <section className='w-full'>
         <Feedback />
       </section>
     </div>
