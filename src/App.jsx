@@ -6,6 +6,7 @@ import NewArrival from "./components/NewArrival";
 import Banner from "./components/Banner";
 import Categories from "./components/Categories";
 import Feedback from "./components/Feedback";
+import Articles from "./components/Articles";
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
       </section>
       <section className='w-full'>
         <Feedback />
+      </section>
+      <section>
+        <Articles />
       </section>
     </div>
   );

@@ -308,33 +308,33 @@
   }
 
   .feedback {
-    @apply w-full py-15 bg-(--color-bg-secondary) 
+    @apply xl:top-365 lg:top-355 md:top-300 w-full xl:py-25 py-15 bg-(--color-bg-secondary) 
     px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
   }
   .a-feedback {
-    @apply md:mx-20 mt-15.75 text-center grid grid-cols-2 grid-flow-row-dense h-fit;
+    @apply mt-13.75 xl:mt-18  xl:gap-x-31.75 md:gap-x-21.25 md:text-start text-center grid grid-cols-2 grid-flow-row-dense  h-fit;
   }
 
   .feedback-content {
-    @apply col-span-full  text-(--color-text-dark-primary);
+    @apply col-span-full  md:flex md:flex-col md:gap-6 md:justify-center  md:col-span-1 text-(--color-text-dark-primary) md:col-start-2;
   }
   .feedback-content-title {
-    @apply mb-4 leading-[32px] text-[20px] font-bold;
+    @apply xl:text-[32px] xl:leading-[51.2px] md:text-2xl md:m-0 mb-4 md:leading-[38.4px] leading-[32px] text-[20px] font-bold;
   }
 
   .feedback-content-des {
-    @apply mb-8 font-medium;
+    @apply xl:text-[20px] xl:leading-[32px] mb-8 md:m-0 md:leading-[25.6px] font-medium;
   }
   .feedback-img {
-    @apply w-full flex justify-end col-start-2 col-span-1;
+    @apply w-full md:h-[436px]  flex justify-end md:justify-start col-start-2 col-span-1 md:col-start-1 md:mr-20.5;
   }
 
   .feedback-img img {
-    @apply w-12 h-12 object-cover;
+    @apply w-12 h-12 md:w-full md:h-full  object-cover;
   }
 
   .feedback-customer {
-    @apply flex gap-3  col-span-1;
+    @apply flex gap-3   col-span-1 md:col-start-2;
   }
 
   .cus-info {
@@ -351,14 +351,14 @@
   .cus-avt img {
     @apply w-12 h-12 rounded-full overflow-hidden;
   }
+
+  .articles {
+    @apply lg:py-30 md:py-20 md:relative md:top-300 lg:top-365 md:text-start text-center pt-15 pb-7 px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
+  }
 }
 :root {
   font-family: "Plus Jakarta Sans";
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #f9f7f5;
-}
-html,
-body {
-  overflow-x: hidden;
 }

@@ -17,15 +17,26 @@ function Feedback() {
   }, [total]);
 
   const extLen = extendedFeedbacks.length;
-
   const [currentIndex, setCurrentIndex] = useState(() =>
     extLen > total ? 1 : 0,
   );
   const [isTransitioning, setIsTransitioning] = useState(false);
-
   const timeoutRef = useRef(null);
   const delay = 3000;
   const mountedRef = useRef(false);
+
+  const nextSlide = () => {
+    setCurrentIndex(
+      (currentIndex) => (currentIndex + 1) % extendedFeedbacks.length,
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex(
+      (currentIndex) =>
+        (currentIndex - 1 + total.length) % extendedFeedbacks.length,
+    );
+  };
 
   useLayoutEffect(() => {
     mountedRef.current = true;
@@ -96,16 +107,28 @@ function Feedback() {
 
   return (
     <div className='feedback relative'>
-      <p className='new-arrivials-title-primary mt-0 text-center'>
-        What our customer says
-      </p>
-
-      <div className='absolute left-0 top-24 w-full z-10 pointer-events-none'>
-        <img
-          className='w-40 h-25 mx-auto'
-          src='/images/feedback/dau-ngoac-kep.svg'
-          alt='Dấu ngoặc kép'
-        />
+      <div className='md:flex md:justify-between w-full'>
+        <p className='new-arrivials-title-primary  mt-0 text-center not-last-of-type:'>
+          What our customer says
+        </p>
+        <div className='md:flex hidden md:gap-6 '>
+          <div>
+            <img
+              onClick={prevSlide}
+              className='w-10 h-10 xl:w-[55px] xl:h-[55px] mx-auto'
+              src='/images/feedback/mui-ten-trai.svg'
+              alt='Mũi tên trái'
+            />
+          </div>
+          <div>
+            <img
+              onClick={nextSlide}
+              className='w-10 h-10 xl:w-[55px] xl:h-[55px] mx-auto'
+              src='/images/feedback/mui-ten-phai.svg'
+              alt='Mũi tên phải'
+            />
+          </div>
+        </div>
       </div>
 
       <div
@@ -120,6 +143,13 @@ function Feedback() {
             );
           }
         }}>
+        <div className='absolute left-0 md:left-21.25 md:top-20 xl:top-10 top-5 w-full z-[-1] pointer-events-none'>
+          <img
+            className='w-40 h-25 xl:w-50 xl:h-40 mx-auto'
+            src='/images/feedback/dau-ngoac-kep.svg'
+            alt='Dấu ngoặc kép'
+          />
+        </div>
         <div
           className='flex'
           style={{
@@ -133,24 +163,54 @@ function Feedback() {
           {extendedFeedbacks.map((fb, idx) => (
             <div
               key={idx}
-              className='flex-shrink-0 p-2'
+              className='flex-shrink-0 md:p-0 p-2'
               style={{ width: `${100 / extLen}%` }}>
               <div className='a-feedback'>
                 <div className='feedback-content'>
-                  <p className='feedback-content-title'>{fb?.product?.title}</p>
+                  <p className='feedback-content-title '>
+                    {fb?.product?.title}
+                  </p>
                   <p className='feedback-content-des'>
                     “{fb?.product?.description}“
                   </p>
+                  <div className='feedback-customer hidden md:flex'>
+                    <div className='cus-avt'>
+                      <img
+                        src={fb?.avatar}
+                        alt={fb?.name}
+                      />
+                    </div>
+
+                    <div className='cus-info'>
+                      <p className='cus-name'>{fb?.name}</p>
+                      <p className='cus-job'>{fb?.job}</p>
+                    </div>
+                  </div>
                 </div>
 
                 <div className='feedback-img'>
+                  <div className='hidden md:block xl:hidden'>
+                    {fb?.product?.imgLg ? (
+                      <img
+                        src={fb?.product?.imgLg}
+                        alt={fb?.product?.title}
+                      />
+                    ) : (
+                      <img
+                        src={fb?.product?.img}
+                        alt={fb?.product?.title}
+                      />
+                    )}
+                  </div>
+
                   <img
+                    className='md:hidden block xl:block'
                     src={fb?.product?.img}
                     alt={fb?.product?.title}
                   />
                 </div>
 
-                <div className='feedback-customer'>
+                <div className='feedback-customer md:hidden flex'>
                   <div className='cus-avt'>
                     <img
                       src={fb?.avatar}
