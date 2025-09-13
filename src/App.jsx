@@ -9,6 +9,7 @@ import Feedback from "./components/Feedback";
 import Articles from "./components/Articles";
 import ShopNow from "./components/ShopNow";
 import Footer from "./components/Footer";
+import Collaboration from "./components/Collaboration";
 
 function App() {
   return (
@@ -30,12 +31,22 @@ function App() {
           <Hero />
         </div>
       </section>
-      <section>
-        <AboutUs></AboutUs>
+
+      <section className='about-us'>
+        <div id='about-us'>
+          <AboutUs />
+        </div>
+        <div className='h-400 w-full hidden lg:block lg:top-0.75 bg-(--color-bg-secondary) absolute z-0'></div>
+        <div id='collaboration'>
+          <Collaboration />
+        </div>
       </section>
-      <section className='w-full'>
+      <section
+        id='product'
+        className='w-full'>
         <NewArrival></NewArrival>
       </section>
+
       <section className='w-full'>
         <Banner />
       </section>
@@ -45,9 +56,12 @@ function App() {
       <section className='w-full'>
         <Feedback />
       </section>
+
       <section>
+        <div id='articles' />
         <Articles />
       </section>
+
       <section className='w-full'>
         <ShopNow />
       </section>

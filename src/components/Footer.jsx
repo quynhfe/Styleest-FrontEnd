@@ -12,7 +12,7 @@ function Footer() {
             abode. Dive into a curated haven of style, where every piece tells a
             story of sophistication and contemporary allure.
           </p>
-          <div className='footer-socials  '>
+          <div className='footer-socials '>
             <BsTwitterX className='footer-socials-icon' />
             <FaInstagram className='footer-socials-icon' />
             <FaLinkedinIn className='footer-socials-icon' />

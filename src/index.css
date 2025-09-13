@@ -64,7 +64,7 @@
   }
 
   .nav-title {
-    @apply text-nowrap hover:text-(--color-text-dark)  hover:origin-(--transform-ogirin) leading-6 text-base uppercase font-medium content-center;
+    @apply text-nowrap hover:text-(--color-text-dark) hover:cursor-pointer  hover:origin-(--transform-ogirin) leading-6 text-base uppercase font-medium content-center;
   }
 
   .nav-logo-box {

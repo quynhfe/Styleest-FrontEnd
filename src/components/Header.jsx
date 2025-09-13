@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-
+import { Link } from "react-scroll";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleOnclickMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
   };
   return (
     <header
@@ -13,23 +19,59 @@ function Header() {
       <nav className='header'>
         <p className='brand-name'>Styleest</p>
         <div
-          className={`navbar-box ${
+          className={`navbar-box transition-transform duration-300 ease-in-out ${
             isMenuOpen
               ? `lg:bg-inherit bg-(--color-text-dark) top-(--top-show-s) md:top-(--top-show-m) flex-col justify-center items-center gap-8 p-4 md:py-20 lg:py-0`
               : `lg:block hidden`
           }`}>
           <ul className='navbar'>
             <li className='flex'>
-              <a className='nav-title'>About us</a>
+              <Link
+                className='nav-title'
+                activeClass='active'
+                to='about-us'
+                spy={true}
+                smooth={true}
+                duration={500}
+                onClick={closeMenu}>
+                About us
+              </Link>
             </li>
             <li>
-              <a className='nav-title'>Collaboration</a>
+              <Link
+                className='nav-title'
+                activeClass='active'
+                to='collaboration'
+                spy={true}
+                smooth={true}
+                duration={500}
+                onClick={closeMenu}>
+                Collaboration
+              </Link>
             </li>
             <li>
-              <a className='nav-title'> Product</a>
+              <Link
+                className='nav-title'
+                activeClass='active'
+                to='product'
+                spy={true}
+                smooth={true}
+                duration={500}
+                onClick={closeMenu}>
+                Product
+              </Link>
             </li>
             <li>
-              <a className='nav-title'>Articles</a>
+              <Link
+                className='nav-title'
+                activeClass='active'
+                to='articles'
+                spy={true}
+                smooth={true}
+                duration={500}
+                onClick={closeMenu}>
+                Articles
+              </Link>
             </li>
           </ul>
           <a className={`w-35 lg:hidden ${isMenuOpen ? `block` : `hidden`}`}>
