@@ -8,6 +8,7 @@ import Categories from "./components/Categories";
 import Feedback from "./components/Feedback";
 import Articles from "./components/Articles";
 import ShopNow from "./components/ShopNow";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -49,6 +50,9 @@ function App() {
       </section>
       <section className='w-full'>
         <ShopNow />
+      </section>
+      <section className='w-full'>
+        <Footer />
       </section>
     </div>
   );

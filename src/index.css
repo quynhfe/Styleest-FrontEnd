@@ -392,6 +392,48 @@
   .shop-des {
     @apply md:mb-14 lg:text-lg font-medium mb-8;
   }
+
+  .footer {
+    @apply md:top-300 lg:top-355 xl:top-365 pt-16 text-center bg-(--color-text-dark);
+  }
+
+  .footer-f {
+    @apply lg:text-start lg:grid-flow-col-dense grid grid-flow-row px-(--mx-sm) md:px-(--mx-md)  xl:px-(--mx-xl);
+  }
+  .footer p {
+    @apply font-medium text-(--color-text-dark-muted);
+  }
+  .footer-title {
+    @apply text-white text-[42px] font-(family-name:--font-header) font-bold uppercase;
+  }
+
+  .footer-socials {
+    @apply flex justify-center lg:justify-start gap-2;
+  }
+  .footer-socials-icon {
+    @apply mb-8.5 w-6 h-6 p-[5.5px] text-(--color-text-dark-muted);
+  }
+
+  .list-outline {
+    @apply xl:gap-x-14 md:items-center md:pb-0 xl:w-114 lg:w-102 lg:gap-x-8 lg:col-span-1  grid lg:grid-flow-col-dense gap-y-4 pb-11.5;
+  }
+
+  .out-line {
+    @apply lg:w-fit mb-4 font-medium lg:leading-[25.6px];
+  }
+  .outline-title {
+    @apply mb-8 text-white text-[20px] font-(family-name:--font-header) font-bold;
+  }
+  .footer-s {
+    @apply lg:pt-9 lg:pb-6.25 md:pt-11.75 md:pb-9 pt-6.75 pb-4 items-center lg:px-(--mx-md)  xl:px-(--mx-xl) lg:flex lg:justify-between border-t-1 border-[#474747] text-sm;
+  }
+  .copy-right {
+    @apply opacity-70;
+  }
+
+  .end-footer {
+    @apply opacity-70 flex gap-8 justify-center mt-3  lg:m-0;
+  }
 }
 :root {
   font-family: "Plus Jakarta Sans";

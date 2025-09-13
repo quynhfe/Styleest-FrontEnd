@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Shop",
+    "list": ["Men", "Women", "Kids", "Sport"]
+  },
+  {
+    "id": 2,
+    "title": "Explore",
+    "list": ["About us", "Collaboration", "Product", "Articles"]
+  },
+  {
+    "id": 3,
+    "title": "Contact",
+    "list": [
+      "contac@styleest.com",
+      "2972 Westheimer Rd. Santa Ana, Illinois 85486"
+    ]
+  }
+]
