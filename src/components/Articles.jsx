@@ -7,7 +7,7 @@ function Articles() {
       <p className='new-arrivials-title-primary lg:mb-8  mb-9 mt-3 text-center md:col-span-2 md:text-start md:text-nowrap'>
         Stay inspired with our blogs
       </p>
-      <p className='see-collection flex mt-10 mb-9 row-start-5 hover:scale-105 md:col-start-3 md:row-start-2  md:mt-4 md:justify-end items-center'>
+      <p className='see-collection flex mt-10 mb-9 row-start-5 hover:scale-105 md:col-start-3 md:row-start-2  md:mt-4 md:justify-end justify-center items-center'>
         More Articles
       </p>
       <div className='list-articles'>
@@ -25,7 +25,7 @@ function Articles() {
                   src={article?.img}
                   alt={article?.title}></img>
               </div>
-              <div className='grid grid-flow-row-dense gap-4 md:gap-2.5 lg:col-span-2 lg:grid-cols-2 items-center lg:gap-21.25'>
+              <div className='grid grid-flow-row-dense gap-4 md:gap-2.5 lg:grid-flow-col-dense lg:col-span-2  items-center lg:gap-8 xl:gap-15'>
                 <p className=' category-name md:text-2xl m-0 text-(--color-text-dark) lg:col-span-1 lg:leading-[38.4px] hover:underline decoration-(--color-text-dark)'>
                   {article?.title}
                 </p>
