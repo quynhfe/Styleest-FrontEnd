@@ -88,7 +88,7 @@
   }
 
   .header-hero {
-    @apply relative z-1 h-200   w-full   
+    @apply relative z-1 min-h-200   w-full   
      /* bg-[center_top]
      lg:bg-[center_top] */
      /* lg:bg-[left_-100px_top_-50px]  */
@@ -100,7 +100,7 @@
     @apply absolute inset-0 z-[-1] h-full w-full md:object-left-top;
   }
   .hero {
-    @apply h-max px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) mt-[293px]
+    @apply h-max  mt-[293px]
     grid grid-flow-row grid-cols-1  gap-4
       md:grid-cols-4 md:gap-y-11 md:gap-x-22
       lg:gap-y-4 lg:grid-cols-5 xl:gap-y-4
@@ -141,8 +141,8 @@
   }
 
   .introdution {
-    @apply lg:sticky lg:top-0 lg:z-1 
-      bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) py-15 text-center flex flex-col gap-6  justify-center font-bold
+    @apply lg:sticky 
+        w-full  py-15 text-center flex flex-col gap-6  justify-center font-bold
     md:py-20 md:text-start;
   }
   .introdution-title {
@@ -150,43 +150,43 @@
   }
 
   .about-des {
-    @apply relative  lg:leading-[67.2px] md:text-[32px] lg:text-5xl  md:leading-[44.8px]  text-(--color-text-dark) font-(family-name:--font-header)  text-2xl mb-10 leading-[33.6px];
+    @apply xl:leading-[67.2px] md:text-[32px] xl:text-5xl  md:leading-[44.8px]  text-(--color-text-dark) font-(family-name:--font-header)  text-2xl mb-10 leading-[33.6px];
   }
 
   .about-tayson {
-    @apply lg:grid-rows-5 lg:grid-cols-9 lg:pt-0 md:pb-0 grid grid-rows-7 grid-cols-5 md:grid-rows-6 md:grid-cols-7 h-[687px] lg:h-[850px] py-15 px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
+    @apply max-md:py-15  w-full max-md:gap-y-16.75 md:gap-x-21.75 lg:gap-x-16 xl:gap-x-[126px] lg:pt-0 md:pb-0 grid grid-flow-row-dense md:grid-rows-none md:grid-flow-col-dense;
   }
   .img-taysonf {
-    @apply lg:col-span-4 lg:row-span-4 w-full row-span-4 col-span-full  row-start-1 md:row-span-3  md:col-span-2;
+    @apply xl:w-[486px] xl:h-[600px] lg:w-[384px] lg:h-[474px] h-78 md:h-[274px] md:w-[222px]   w-full    row-start-1 md:col-start-1 md:col-span-1;
   }
 
   .img-taysonf img {
-    @apply lg:w-[486px] lg:h-[600px] w-full h-full object-top object-cover md:object-scale-down md:object-left-top;
+    @apply w-full h-full object-top object-cover md:object-scale-down md:object-left-top;
   }
   .img-taysonb {
-    @apply row-span-2 lg:col-span-3 col-span-2 md:col-start-6  md:mb-5;
+    @apply xl:h-[326px] lg:w-[310px] lg:h-66 absolute top-72.25 z-1 w-40 h-29.5  md:h-41 xl:w-[383px] md:w-[222px] row-span-2  col-span-2;
   }
   .img-taysonb img {
-    @apply w-full h-[80%] lg:w-[383px] lg:h-[326px] md:h-full  object-top object-cover;
+    @apply w-full h-full  object-top object-cover;
   }
   .tayson-des {
-    @apply lg:col-span-5 md:text-start  md:col-span-4 md:col-start-4 md:row-start-3 md:row-span-3 flex flex-col gap-3.75 lg:gap-6 text-center row-span-2 col-span-full;
+    @apply md:text-start lg:col-start-2  md:col-span-1 md:col-start-2  flex flex-col text-center row-span-1 col-span-full;
   }
 
   .tayson-des h3 {
-    @apply lg:text-[32px] text-(--color-text-dark) font-bold text-xl m-0.25;
+    @apply mb-4 md:mb-6 lg:text-[32px] text-(--color-text-dark) font-bold text-xl;
   }
   .tayson-des-p {
-    @apply lg:text-lg text-(--color-text-dark-primary) font-medium leading-[25.6px];
+    @apply mb-6  lg:text-lg text-(--color-text-dark-primary) font-medium leading-[25.6px];
   }
 
   .see-collection {
-    @apply mt-4.25 text-(--color-text-dark) font-bold underline decoration-1 underline-offset-8;
+    @apply text-(--color-text-dark) font-bold underline decoration-1 underline-offset-8;
   }
 
   .new-arrivials {
-    @apply max-md:mt-5 md:top-300 relative lg:z-0 lg:top-365 bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) text-center gap-6 items-center justify-center font-bold
-    md:py-20 py-15 lg:pb-25 md:pb-20 pb-15;
+    @apply lg:z-0  bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) text-center gap-6 items-center justify-center font-bold
+    md:pb-20 py-15 xl:pt-66.5 md:pt-52.75 lg:pt-53.5 pb-15;
   }
   .new-arrivials-title-primary {
     @apply mt-5.5 font-(family-name:--font-header) text-(--color-text-dark) gap-4 font-bold text-2xl md:text-[32px] lg:text-5xl;
@@ -251,7 +251,7 @@
   }
 
   .banner {
-    @apply h-[622px] xl:h-[800px] relative md:top-300 lg:top-365;
+    @apply h-[622px] xl:h-[800px];
   }
 
   .banner-img {
@@ -259,7 +259,7 @@
   }
 
   .banner-des {
-    @apply xl:grid-rows-3 xl:grid-cols-3 md:grid md:grid-cols-2 md:grid-rows-2 top-82 md:top-104.75 xl:top-120.25 text-white absolute z-10  px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) flex flex-col gap-6 justify-center items-center text-center;
+    @apply xl:grid-rows-3 xl:grid-cols-3 md:grid md:grid-cols-2 md:grid-rows-2  text-white   px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) flex flex-col gap-6 justify-center items-center text-center;
   }
 
   .box-btn-explore {
@@ -275,7 +275,7 @@
   }
 
   .categories {
-    @apply lg:py-30 md:py-20 md:relative md:top-300 lg:top-365 md:text-start text-center pt-15 pb-7 px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
+    @apply lg:py-30 md:py-20  md:text-start text-center pt-15 pb-7 px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
   }
 
   .list-category {
@@ -308,7 +308,7 @@
   }
 
   .feedback {
-    @apply xl:top-365 lg:top-355 md:top-300 w-full xl:py-25 py-15 bg-(--color-bg-secondary) 
+    @apply w-full xl:py-25 py-15 bg-(--color-bg-secondary) 
     px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
   }
   .a-feedback {
@@ -353,7 +353,7 @@
   }
 
   .articles {
-    @apply grid grid-flow-row-dense md:grid-flow-col-dense lg:py-30 md:py-20 md:relative md:top-300 lg:top-365 md:text-start text-center pt-15 pb-7 px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-xl);
+    @apply grid grid-flow-row-dense md:grid-flow-col-dense lg:py-30 md:py-20  md:text-start text-center pt-15 pb-7 px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-xl);
   }
   .list-articles {
     @apply flex flex-col gap-5 md:row-start-3 md:col-span-3;
@@ -374,7 +374,7 @@
   }
 
   .shop-now {
-    @apply md:top-300 lg:top-355 xl:top-365 w-full h-full bg-[url(../images/footer/footer.jpg)] bg-center bg-cover;
+    @apply w-full h-full bg-[url(../images/footer/footer.jpg)] bg-center bg-cover;
   }
 
   .shop-now-bg img {
@@ -394,7 +394,7 @@
   }
 
   .footer {
-    @apply md:top-300 lg:top-355 xl:top-365 pt-16 text-center bg-(--color-text-dark);
+    @apply pt-16 text-center bg-(--color-text-dark);
   }
 
   .footer-f {
@@ -441,3 +441,8 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #f9f7f5;
 }
+/* 
+html,
+body {
+  overflow-x: hidden;
+} */

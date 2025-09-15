@@ -8,7 +8,7 @@ function ShopNow() {
           src='/images/footer/footer.jpg'
           alt='background'></img>
       </div> */}
-      <div className='shop-now-content'>
+      <div className='shop-now-content max-w-7xl mx-auto'>
         <p className='shop-title'>
           Take the next step with our exclusive collections
         </p>

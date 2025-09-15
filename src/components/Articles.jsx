@@ -2,7 +2,7 @@ import articles from "../data/articles.json";
 
 function Articles() {
   return (
-    <div className='articles'>
+    <div className='articles max-w-7xl'>
       <p className='introdution-title'>(Articles)</p>
       <p className='new-arrivials-title-primary lg:mb-8  mb-9 mt-3 text-center md:col-span-2 md:text-start md:text-nowrap'>
         Stay inspired with our blogs

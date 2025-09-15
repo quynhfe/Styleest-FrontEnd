@@ -16,7 +16,7 @@ function Header() {
       className={`header-box ${
         isMenuOpen ? `lg:bg-inherit bg-(--color-text-dark)` : ``
       }`}>
-      <nav className='header'>
+      <nav className='header max-w-7xl mx-auto'>
         <p className='brand-name'>Styleest</p>
         <div
           className={`navbar-box transition-transform duration-300 ease-in-out ${

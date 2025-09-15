@@ -14,7 +14,7 @@ import Collaboration from "./components/Collaboration";
 function App() {
   return (
     <div className='app '>
-      <section className='header-hero'>
+      <section className='header-hero '>
         <picture className='img-header-hero'>
           <source
             srcSet='/images/hero/hero.jpg'
@@ -26,13 +26,13 @@ function App() {
             className='h-full w-full object-cover'
           />
         </picture>
-        <div className='relative z-[1]'>
-          <Header />
+        <div className='relative z-[1]  h-full w-full '>
+          <Header></Header>
           <Hero />
         </div>
       </section>
 
-      <section className='about-us'>
+      <section className='about-us '>
         <div id='about-us'>
           <AboutUs />
         </div>

@@ -264,81 +264,83 @@ function NewArrival() {
   };
 
   return (
-    <div className='relative new-arrivials overflow-hidden'>
-      <h2 className='introdution-title lg:mt-47 text-center'>(New Arrival)</h2>
-      <h3 className='new-arrivials-title-primary'>
-        Explore our latest fashion arrivals
-      </h3>
-
-      <div className='flex justify-between items-center h-fit mt-6'>
-        <p className='total-items'>{items.length} items</p>
-        <p className='see-collection mt-0'>See All Items</p>
-      </div>
-
-      <div
-        ref={sliderRef}
-        className='list-new-arrivials'
-        style={{
-          transform: isMobile ? `translateX(-${currentIndex * 278}px)` : "none",
-          transition: isTransitioning
-            ? `transform ${transitionDuration}ms ease-in-out`
-            : "none",
-        }}
-        onTransitionEnd={handleTransitionEnd}
-        {...swipeHandlers}>
-        {(isMobile ? extendedItems : items).map((item, index) => (
-          <div
-            key={`${item.originalId || item.id}-${index}`}
-            className='new-arrivial flex-shrink-0'
-            onDragStart={(e) => e.preventDefault()}>
-            <div className='new-arrivial-img-box relative group'>
-              <img
-                className='new-arrivial-img select-none'
-                src={item.img}
-                alt={item.name}
-              />
-              <a className='btn-add-to-card-box opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
-                <button className='btn-add-to-card'>Add to Cart</button>
-              </a>
-            </div>
-
-            <div className='new-arrivial-des'>
-              <p className='new-arrivial-name'>{item.name}</p>
-              <div className='new-arrivial-price'>
-                {item.salePrice && (
-                  <p className='sale-price block'>{item.salePrice} USD</p>
-                )}
-                <p className='price'>{item.price} USD</p>
+    <div className=' new-arrivials overflow-hidden'>
+      <div className='max-w-7xl mx-auto'>
+        <h2 className='introdution-title text-center'>(New Arrival)</h2>
+        <h3 className='new-arrivials-title-primary'>
+          Explore our latest fashion arrivals
+        </h3>
+        <div className='flex justify-between items-center h-fit mt-6'>
+          <p className='total-items'>{items.length} items</p>
+          <p className='see-collection mt-0'>See All Items</p>
+        </div>
+        <div
+          ref={sliderRef}
+          className='list-new-arrivials'
+          style={{
+            transform: isMobile
+              ? `translateX(-${currentIndex * 278}px)`
+              : "none",
+            transition: isTransitioning
+              ? `transform ${transitionDuration}ms ease-in-out`
+              : "none",
+          }}
+          onTransitionEnd={handleTransitionEnd}
+          {...swipeHandlers}>
+          {(isMobile ? extendedItems : items).map((item, index) => (
+            <div
+              key={`${item.originalId || item.id}-${index}`}
+              className='new-arrivial flex-shrink-0'
+              onDragStart={(e) => e.preventDefault()}>
+              <div className='new-arrivial-img-box relative group'>
+                <img
+                  className='new-arrivial-img select-none'
+                  src={item.img}
+                  alt={item.name}
+                />
+                <a className='btn-add-to-card-box opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
+                  <button className='btn-add-to-card'>Add to Cart</button>
+                </a>
               </div>
 
-              <div className='list-color'>
-                {item.colors.map((color) => {
-                  const isActive = activeColor[item.id] === color;
-                  return (
-                    <div
-                      key={color}
-                      onClick={() => handleColorClick(item.id, color)}
-                      className={`color cursor-pointer transition-colors duration-300 ease-in ${
-                        isActive
-                          ? "bg-none border-(--color-border-item-active)"
-                          : `border-(--color-border-item) ${colorMap[color]}`
-                      }`}>
+              <div className='new-arrivial-des'>
+                <p className='new-arrivial-name'>{item.name}</p>
+                <div className='new-arrivial-price'>
+                  {item.salePrice && (
+                    <p className='sale-price block'>{item.salePrice} USD</p>
+                  )}
+                  <p className='price'>{item.price} USD</p>
+                </div>
+
+                <div className='list-color'>
+                  {item.colors.map((color) => {
+                    const isActive = activeColor[item.id] === color;
+                    return (
                       <div
-                        className={`w-3 h-3 cursor-pointer transition-shadow duration-300 ease-in-out rounded-full ${
-                          colorMap[color]
-                        } ${
+                        key={color}
+                        onClick={() => handleColorClick(item.id, color)}
+                        className={`color cursor-pointer transition-colors duration-300 ease-in ${
                           isActive
-                            ? "shadow-(--color-boxshadow-items-color)"
-                            : "shadow-none"
-                        }`}
-                      />
-                    </div>
-                  );
-                })}
+                            ? "bg-none border-(--color-border-item-active)"
+                            : `border-(--color-border-item) ${colorMap[color]}`
+                        }`}>
+                        <div
+                          className={`w-3 h-3 cursor-pointer transition-shadow duration-300 ease-in-out rounded-full ${
+                            colorMap[color]
+                          } ${
+                            isActive
+                              ? "shadow-(--color-boxshadow-items-color)"
+                              : "shadow-none"
+                          }`}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

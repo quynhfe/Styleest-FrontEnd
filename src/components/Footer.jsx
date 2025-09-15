@@ -4,7 +4,7 @@ import { BsTwitterX } from "react-icons/bs";
 function Footer() {
   return (
     <div className='footer relative'>
-      <div className='footer-f'>
+      <div className='footer-f max-w-7xl mx-auto'>
         <div className='flex flex-col gap-6 lg:col-span-1 xl:w-[379px] lg:w-[338px]'>
           <h1 className='footer-title'>Styleest</h1>
           <p className='footer-des xl:text-lg xl:leading-[28.8px]'>
@@ -20,7 +20,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className='w-full lg:flex lg:justify-end'>
+        <div className='w-full lg:flex lg:justify-end '>
           <div className='list-outline'>
             {data?.map((d) => {
               return (
@@ -48,12 +48,14 @@ function Footer() {
         </div>
       </div>
       <div className='footer-s '>
-        <p className='copy-right'>
-          Copyright© 2023. Agensip Creative Agency. All Right Reserved.
-        </p>
-        <div className='end-footer'>
-          <p>Terms of Service</p>
-          <p>Privacy Policy</p>
+        <div className='max-w-7xl mx-auto'>
+          <p className='copy-right'>
+            Copyright© 2023. Agensip Creative Agency. All Right Reserved.
+          </p>
+          <div className='end-footer'>
+            <p>Terms of Service</p>
+            <p>Privacy Policy</p>
+          </div>
         </div>
       </div>
     </div>

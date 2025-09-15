@@ -24,7 +24,7 @@ const categoryPosition = {
 
 function Categories() {
   return (
-    <div className='categories'>
+    <div className='categories  '>
       <p className='introdution-title lg:mb-6 text-center '>(Categories)</p>
       <p className='new-arrivials-title-primary lg:mb-15.25  mb-10 mt-3 text-center'>
         Curated products
