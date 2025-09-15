@@ -259,7 +259,7 @@
   }
 
   .banner-des {
-    @apply xl:grid-rows-3 xl:grid-cols-3 md:grid md:grid-cols-2 md:grid-rows-2  text-white   px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) flex flex-col gap-6 justify-center items-center text-center;
+    @apply xl:grid-rows-3 xl:grid-cols-3 md:grid md:grid-cols-2 md:grid-rows-2  text-white  flex flex-col gap-6 justify-center items-center text-center;
   }
 
   .box-btn-explore {

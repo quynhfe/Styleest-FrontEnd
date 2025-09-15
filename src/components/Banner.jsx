@@ -8,7 +8,7 @@ function Banner() {
         alt='Hero'
         className='banner-img'
       />
-      <div className='absolute w-full z-10 top-82 md:top-104.75 xl:top-120.25'>
+      <div className='absolute w-full z-10 top-82 md:top-104.75 xl:top-120.25  px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) '>
         <div className='banner-des  max-w-7xl mx-auto'>
           <p className='banner-text-first'>
             Get everyting you need for your fashion look and life style
