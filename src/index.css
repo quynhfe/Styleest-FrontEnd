@@ -38,7 +38,7 @@
 
   --mx-sm: 24px;
   --mx-md: 60px;
-  --mx-lg: 100px;
+  --mx-lg: 60px;
   --mx-xl: 113px;
 }
 
@@ -88,16 +88,17 @@
   }
 
   .header-hero {
-    @apply relative z-1 min-h-200   w-full   
+    @apply relative z-1 h-200 2xl:max-h-190   w-full   bg-(--color-bg-secondary) 
      /* bg-[center_top]
      lg:bg-[center_top] */
      /* lg:bg-[left_-100px_top_-50px]  */
-      text-center
+      text-center overflow-hidden
       /* md:bg-[left_-110px_top_-40px]
       md:bg-[length:200%_cover]; */;
   }
-  .img-header-hero {
-    @apply absolute inset-0 z-[-1] h-full w-full md:object-left-top;
+
+  .img-header-hero img {
+    @apply absolute inset-0 z-[-1] h-full w-full object-center md:object-[-110px_-40px] md:scale-105 lg:object-left-top lg:scale-112;
   }
   .hero {
     @apply h-max  mt-[293px]
@@ -108,7 +109,7 @@
   }
   .hero-title {
     @apply md:leading-[170px]
-    md:col-span-full md:row-start-2 lg:row-start-3 text-[82px] leading-[90.2px] lg:leading-[246.4px] md:text-[154px]  lg:text-[224px] xl:row-end-5  font-bold font-(family-name:--font-header) xl:text-nowrap;
+    md:col-span-full md:row-start-2 lg:row-start-3 text-[82px] leading-[90.2px] lg:leading-[246.4px] md:text-[154px]  lg:text-[224px] 2xl:text-[284px] xl:row-end-5  font-bold font-(family-name:--font-header) xl:text-nowrap;
   }
 
   .hero-title-primary {
@@ -143,7 +144,7 @@
   .introdution {
     @apply lg:sticky 
         w-full  py-15 text-center flex flex-col gap-6  justify-center font-bold
-    md:py-20 md:text-start;
+    md:py-20 xl:py-30 md:text-start;
   }
   .introdution-title {
     @apply md:text-start tracking-[3.2px] text-(--color-text-brown) font-bold text-base uppercase;
