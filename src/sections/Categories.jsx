@@ -47,22 +47,24 @@ function Categories() {
                 className={` hidden xl:block xl:absolute xl:z-5 xl:col-span-1 xl:row-span-1 xl:bg-[linear-gradient(180deg,rgba(17,17,17,0)_0%,rgb(17,17,17)_100%)] w-full h-full bottom-0  xl:m-0`}></div>
               <div
                 className={`category-info 
-                   xl:absolute bottom-0 xl:z-10 xl:col-span-1 xl:row-span-1 transition-position  duration-500 ease-in-out   
+                   xl:absolute h-80  bottom-2 z-10 xl:col-span-1 xl:row-span-1 
                    ${infoBoxPosition[categorie?.name]} xl:m-0`}>
-                <p className='category-name xl:pb-7 xl:group-hover:pb-0'>
+                <p className='category-name  xl:translate-y-55   xl:group-hover:translate-y-0 col-span-1  transform transition duration-400  '>
                   {categorie?.name}
                 </p>
-                <p className='category-des block xl:hidden  xl:group-hover:block'>
-                  {categorie?.description}
-                </p>
+                <div className=' xl:translate-y-50 xl:group-hover:block xl:group-hover:translate-y-0 transform transition duration-400'>
+                  <p className='category-des xl:opacity-0 xl:group-hover:opacity-100 transform transition-discrete duration-100'>
+                    {categorie?.description}
+                  </p>
+                  <a className='box-btn-explore xl:opacity-0 xl:group-hover:opacity-100 transform transition-discrete duration-100 w-fit'>
+                    <button className='btn-login text-sm h-[47px] w-[152px] py-4 '>
+                      Explore Now
+                    </button>
+                  </a>
+                </div>
                 <p className='see-collection block xl:hidden mb-9'>
                   Explore Now
                 </p>
-                <a className='box-btn-explore hidden xl:group-hover:block w-fit'>
-                  <button className='btn-login text-sm h-[47px] w-[152px] py-4 '>
-                    Explore Now
-                  </button>
-                </a>
               </div>
             </div>
           );

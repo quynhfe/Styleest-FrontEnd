@@ -1,15 +1,15 @@
 import "./index.css";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import AboutUs from "./components/AboutUs";
-import NewArrival from "./components/NewArrival";
-import Banner from "./components/Banner";
-import Categories from "./components/Categories";
-import Feedback from "./components/Feedback";
-import Articles from "./components/Articles";
-import ShopNow from "./components/ShopNow";
-import Footer from "./components/Footer";
-import Collaboration from "./components/Collaboration";
+import Header from "./sections/Header";
+import Hero from "./sections/Hero";
+import AboutUs from "./sections/AboutUs";
+import NewArrival from "./sections/NewArrival";
+import Banner from "./sections/Banner";
+import Categories from "./sections/Categories";
+import Feedback from "./sections/Feedback";
+import Articles from "./sections/Articles";
+import ShopNow from "./sections/ShopNow";
+import Footer from "./sections/Footer";
+import Collaboration from "./sections/Collaboration";
 
 function App() {
   return (

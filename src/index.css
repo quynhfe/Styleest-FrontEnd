@@ -296,8 +296,7 @@
   }
 
   .category-info {
-    @apply xl:group-hover:pb-6.25
-     xl:text-white xl:m-0 xl:px-6 lg:col-span-1 md:col-span-2 md:row-span-1  text-(--color-text-dark);
+    @apply xl:text-white xl:m-0 xl:px-6 lg:col-span-1 md:col-span-2 md:row-span-1  text-(--color-text-dark);
   }
 
   .category-name {
