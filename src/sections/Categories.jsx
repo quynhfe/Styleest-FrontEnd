@@ -47,7 +47,7 @@ function Categories() {
                 className={` hidden xl:block xl:absolute xl:z-5 xl:col-span-1 xl:row-span-1 xl:bg-[linear-gradient(180deg,rgba(17,17,17,0)_0%,rgb(17,17,17)_100%)] w-full h-full bottom-0  xl:m-0`}></div>
               <div
                 className={`category-info 
-                   xl:absolute h-80  bottom-2 z-10 xl:col-span-1 xl:row-span-1 
+                   xl:absolute xl:h-80  bottom-2 z-10 xl:col-span-1 xl:row-span-1 
                    ${infoBoxPosition[categorie?.name]} xl:m-0`}>
                 <p className='category-name  xl:translate-y-55   xl:group-hover:translate-y-0 col-span-1  transform transition duration-400  '>
                   {categorie?.name}
@@ -56,7 +56,7 @@ function Categories() {
                   <p className='category-des xl:opacity-0 xl:group-hover:opacity-100 transform transition-discrete duration-100'>
                     {categorie?.description}
                   </p>
-                  <a className='box-btn-explore xl:opacity-0 xl:group-hover:opacity-100 transform transition-discrete duration-100 w-fit'>
+                  <a className='box-btn-explore hidden xl:block xl:opacity-0 xl:group-hover:opacity-100 transform transition-discrete duration-100 w-fit'>
                     <button className='btn-login text-sm h-[47px] w-[152px] py-4 '>
                       Explore Now
                     </button>
