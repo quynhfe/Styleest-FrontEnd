@@ -1,15 +1,17 @@
+import Link from "../components/Link";
+import Title from "../components/Title";
 import articles from "../data/articles.json";
 
 function Articles() {
   return (
     <div className='articles max-w-7xl'>
-      <p className='introdution-title'>(Articles)</p>
+      <Title className='md:text-start '>Articles</Title>
       <p className='new-arrivials-title-primary lg:mb-8  mb-9 mt-3 text-center md:col-span-2 md:text-start md:text-nowrap'>
         Stay inspired with our blogs
       </p>
-      <p className='see-collection flex mt-10 mb-9 row-start-5 hover:scale-105 md:col-start-3 md:row-start-2  md:mt-4 md:justify-end justify-center items-center'>
+      <Link className='flex mt-10 mb-9 row-start-5 hover:scale-105 md:col-start-3 md:row-start-2  md:mt-4 md:justify-end justify-center items-center'>
         More Articles
-      </p>
+      </Link>
       <div className='list-articles'>
         {articles?.map((article, index) => {
           return (
@@ -31,7 +33,7 @@ function Articles() {
                 </p>
                 <div className='article-content'>
                   <p className='article-date'>{article?.date}</p>
-                  <div className='rounded-full w-2 h-2 bg-(--color-dot)'></div>
+                  <div className='rounded-full w-2 h-2 bg-dot'></div>
                   <p className='article-time'>{article?.time} min read</p>
                 </div>
               </div>

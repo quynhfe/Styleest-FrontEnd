@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import items from "../data/newArrival.json";
+import Link from "../components/Link";
+import Title from "../components/Title";
+import TitlePrimary from "../components/TitlePrimary";
 
 const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(false);
@@ -130,24 +133,27 @@ function NewArrival() {
     : {};
 
   const colorMap = {
-    brown: "bg-(--color-item-brown)",
-    green: "bg-(--color-item-green)",
-    grey: "bg-(--color-item-grey)",
+    brown: "bg-item-brown",
+    green: "bg-item-green",
+    grey: "bg-item-grey",
     white: "bg-white",
-    black: "bg-(--color-text-dark)",
-    blue: "bg-(--color-item-blue)",
+    black: "bg-text-dark",
+    blue: "bg-item-blue",
   };
 
   return (
     <div className=' new-arrivials overflow-hidden'>
       <div className='max-w-7xl mx-auto'>
-        <h2 className='introdution-title text-center'>(New Arrival)</h2>
-        <h3 className='new-arrivials-title-primary'>
+        {/* <h2 className='introdution-title text-center'>(New Arrival)</h2>
+         */}
+        <Title className={"mb-11.5 "}>New Arrival</Title>
+        {/* <h3 className='new-arrivials-title-primary'>
           Explore our latest fashion arrivals
-        </h3>
+        </h3> */}
+        <TitlePrimary>Explore our latest fashion arrivals</TitlePrimary>
         <div className='flex justify-between items-center h-fit mt-6'>
           <p className='total-items'>{items.length} items</p>
-          <p className='see-collection mt-0'>See All Items</p>
+          <Link className='mt-0'>See All Items</Link>
         </div>
         <div
           ref={sliderRef}

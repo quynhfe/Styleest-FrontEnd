@@ -1,5 +1,6 @@
 import React from "react";
 import aboutData from "../data/about.json";
+import Link from "../components/Link";
 
 function Collaboration() {
   return (
@@ -48,7 +49,7 @@ function Collaboration() {
               powerhouses, combining Styleest's curated sophistication with
               Coutu's avant-garde designs.
             </p>
-            <p className='see-collection'>See Collection</p>
+            <Link>See Collection</Link>
           </div>
         </div>
       </div>

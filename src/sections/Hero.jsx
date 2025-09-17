@@ -1,5 +1,5 @@
 import React from "react";
-
+import Button from "../components/Button";
 function Hero() {
   return (
     <div className='px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl)'>
@@ -24,11 +24,9 @@ function Hero() {
           </p>
         </div>
 
-        <a className='box-btn-see'>
-          <button className='btn-login text-[16px] w-45 h-[59px] md:ml-1'>
-            See Collection
-          </button>
-        </a>
+        <div className='md:col-span-2 md:col-end-5 mx-auto md:mx-0 mt-[20px] md:mt-0 md:flex md:justify-end h-full md:items-end lg:col-start-4 lg:col-span-2'>
+          <Button bStyle=' '>See Collection</Button>
+        </div>
       </div>
     </div>
   );

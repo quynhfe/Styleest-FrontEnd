@@ -3,7 +3,7 @@ import { FaInstagram, FaLinkedinIn, FaFacebook } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 function Footer() {
   return (
-    <div className='footer relative'>
+    <div className='footer relative w-full'>
       <div className='footer-f max-w-7xl mx-auto'>
         <div className='flex flex-col gap-6 lg:col-span-1 xl:w-[379px] lg:w-[338px]'>
           <h1 className='footer-title'>Styleest</h1>

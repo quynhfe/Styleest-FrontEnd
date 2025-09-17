@@ -1,5 +1,5 @@
 import React from "react";
-
+import Button from "../components/Button";
 function Banner() {
   return (
     <div className='banner relative'>
@@ -16,11 +16,10 @@ function Banner() {
           <p className='banner-text-second'>
             Find everything you need for your perfect fashion statement.
           </p>
-          <a className='box-btn-explore'>
-            <button className='btn-login text-[16px] h-full py-5 w-[169px]'>
-              Explore More
-            </button>
-          </a>
+
+          <div className='xl:row-start-3 xl:col-start-3 right-0 md:justify-end flex items-center justify-center '>
+            <Button>Explore More</Button>
+          </div>
         </div>
       </div>
     </div>

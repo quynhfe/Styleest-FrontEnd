@@ -40,47 +40,26 @@
   --mx-md: 60px;
   --mx-lg: 60px;
   --mx-xl: 113px;
+
+  --text-md: 16px;
+  --text-xxl: 32px;
 }
 
 @layer components {
   .app {
-    @apply w-full bg-(--color-bg-default) flex flex-col items-center justify-center  p-0 m-0;
-  }
-  .header-box {
-    @apply border-b-[0.5px] border-(--color-boxshadow-header) w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
-  }
-  .header {
-    @apply lg:h-fit h-auto mx-auto md:mx-0  text-white  lg:py-4 py-8 flex justify-between;
-  }
-  .brand-name {
-    @apply xl:w-65 font-(family-name:--font-header) uppercase md:text-[32px] lg:text-2xl text-2xl font-bold tracking-wide content-center flex items-center;
-  }
-
-  .navbar-box {
-    @apply leading-0 lg:bg-inherit mx-auto w-full lg:w-fit lg:min-h-fit lg:static absolute min-h-(--height-mid) flex justify-center content-center left-0  lg:border-b-0 border-b-[0.5px] border-(--color-boxshadow-header);
-  }
-  .navbar {
-    @apply leading-0 font-(family-name:--font-header) flex lg:flex-row flex-col  items-center justify-between lg:gap-9 gap-8 text-xl;
+    @apply w-full  bg-bg-default flex flex-col items-center justify-center  p-0 m-0;
   }
 
   .nav-title {
-    @apply text-nowrap hover:text-(--color-text-dark) hover:cursor-pointer  hover:origin-(--transform-ogirin) leading-6 text-base uppercase font-medium content-center;
+    @apply text-nowrap h-fit hover:text-(--color-text-dark) hover:cursor-pointer  hover:origin-(--transform-ogirin) lg:leading-6 text-base uppercase font-medium content-center;
   }
 
   .nav-logo-box {
-    @apply p-2 inline-flex items-center justify-center bg-(--color-opacity) hover:text-(--color-text-dark) hover:bg-white rounded-full;
+    @apply cursor-pointer p-2 inline-flex items-center justify-center bg-opacity hover:text-(--color-text-dark) hover:bg-white rounded-full;
   }
 
   .nav-logo-icon {
     @apply fill-current md:w-6 w-4 md:h-6 h-4;
-  }
-
-  /* .nav-logo:hover {
-    @apply fill-current text-(--color-text-dark) bg-white;
-  } */
-
-  .nav-actions {
-    @apply flex items-center justify-between lg:gap-5 gap-2.5;
   }
 
   .btn-login {
@@ -88,7 +67,7 @@
   }
 
   .header-hero {
-    @apply relative z-1 h-200 2xl:max-h-190   w-full   bg-(--color-bg-secondary) 
+    @apply relative z-1 h-200 2xl:max-h-190   w-full   bg-bg-secondary 
      /* bg-[center_top]
      lg:bg-[center_top] */
      /* lg:bg-[left_-100px_top_-50px]  */
@@ -97,9 +76,6 @@
       md:bg-[length:200%_cover]; */;
   }
 
-  .img-header-hero img {
-    @apply absolute inset-0 z-[-1] h-full w-full object-center md:object-[-110px_-40px] md:scale-105 lg:object-left-top lg:scale-112;
-  }
   .hero {
     @apply h-max  mt-[293px]
     grid grid-flow-row grid-cols-1  gap-4
@@ -130,21 +106,8 @@
     lg:col-span-2 lg:col-start-1 lg:col-end-4  xl:col-start-1 xl:col-end-3;
   }
 
-  .box-btn-see {
-    @apply md:col-span-2 md:col-end-5
-    mx-auto md:mx-0 mt-[20px] md:mt-0
-    md:flex md:justify-end h-full md:items-end
-    lg:col-start-4 lg:col-span-2;
-  }
-
   .about-us {
     @apply relative w-full;
-  }
-
-  .introdution {
-    @apply lg:sticky 
-        w-full  py-15 text-center flex flex-col gap-6  justify-center font-bold
-    md:py-20 xl:py-30 md:text-start;
   }
   .introdution-title {
     @apply md:text-start tracking-[3.2px] text-(--color-text-brown) font-bold text-base uppercase;
@@ -181,12 +144,8 @@
     @apply mb-6  lg:text-lg text-(--color-text-dark-primary) font-medium leading-[25.6px];
   }
 
-  .see-collection {
-    @apply text-(--color-text-dark) font-bold underline decoration-1 underline-offset-8;
-  }
-
   .new-arrivials {
-    @apply lg:z-0  bg-(--color-bg-secondary)  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) text-center gap-6 items-center justify-center font-bold
+    @apply lg:z-0  bg-bg-secondary  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) text-center gap-6 items-center justify-center font-bold
     md:pb-20 py-15 xl:pt-66.5 md:pt-52.75 lg:pt-53.5 pb-15;
   }
   .new-arrivials-title-primary {
@@ -198,7 +157,7 @@
   }
 
   .btn-next {
-    @apply absolute  top-1/2 -translate-y-1/2 hover:text-(--color-text-dark-primary)  hover:bg-(--color-boxshadow-header) shadow-md p-2 rounded-full z-10 flex items-center justify-center bg-(--color-opacity) transition md:hidden;
+    @apply absolute  top-1/2 -translate-y-1/2 hover:text-(--color-text-dark-primary)  hover:bg-boxshadow-header shadow-md p-2 rounded-full z-10 flex items-center justify-center bg-opacity transition md:hidden;
   }
   .list-new-arrivials {
     @apply w-full mt-[32px] flex gap-5 md:grid md:grid-cols-3  md:grid-rows-3  xl:grid-cols-4  xl:grid-rows-2 md:gap-6  transition-transform duration-500 ease-in-out;
@@ -263,10 +222,6 @@
     @apply xl:grid-rows-3 xl:grid-cols-3 md:grid md:grid-cols-2 md:grid-rows-2  text-white  flex flex-col gap-6 justify-center items-center text-center;
   }
 
-  .box-btn-explore {
-    @apply xl:row-start-3 xl:col-start-3 right-0 md:justify-end flex items-center justify-center w-full h-[59px] overflow-hidden;
-  }
-
   .banner-text-first {
     @apply xl:leading-[86.4px] xl:text-7xl xl:col-span-2 xl:row-span-3  md:text-start md:text-[38px] md:leading-[45.6px] md:col-span-1 md:row-span-2 font-bold text-[28px]  leading-[33.6px];
   }
@@ -308,7 +263,7 @@
   }
 
   .feedback {
-    @apply w-full xl:py-25 py-15 bg-(--color-bg-secondary) 
+    @apply w-full xl:py-25 py-15 bg-bg-secondary 
     px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl);
   }
   .a-feedback {
@@ -394,7 +349,7 @@
   }
 
   .footer {
-    @apply pt-16 text-center bg-(--color-text-dark);
+    @apply pt-16 text-center bg-text-dark;
   }
 
   .footer-f {

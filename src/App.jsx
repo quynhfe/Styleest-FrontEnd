@@ -15,7 +15,11 @@ function App() {
   return (
     <div className='app '>
       <section className='header-hero '>
-        <picture className='img-header-hero'>
+        <div className='relative h-full w-full top-0 '>
+          <Header></Header>
+          <Hero />
+        </div>
+        <picture className='absolute z-[-2] inset-0'>
           <source
             srcSet='/images/hero/hero.jpg'
             media='(min-width: 768px)'
@@ -23,20 +27,16 @@ function App() {
           <img
             src='/images/hero/hero-mobile.jpg'
             alt='Hero'
-            className='h-full w-full object-cover'
+            className='h-full w-full  object-cover object-center md:object-[35%_-40px] md:scale-105 lg:object-left-top lg:scale-112'
           />
         </picture>
-        <div className='relative z-[1]  h-full w-full '>
-          <Header></Header>
-          <Hero />
-        </div>
       </section>
 
       <section className='about-us '>
         <div id='about-us'>
           <AboutUs />
         </div>
-        <div className='h-400 w-full hidden lg:block lg:top-0.75 bg-(--color-bg-secondary) absolute z-0'></div>
+        <div className='h-400 w-full hidden lg:block lg:top-0.75 bg-bg-secondary absolute z-0'></div>
         <div id='collaboration'>
           <Collaboration />
         </div>

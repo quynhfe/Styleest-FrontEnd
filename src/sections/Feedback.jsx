@@ -6,6 +6,7 @@ import React, {
   useLayoutEffect,
 } from "react";
 import feedbacks from "../data/feedback.json";
+import TitlePrimary from "../components/TitlePrimary";
 
 function Feedback() {
   const total = feedbacks.length;
@@ -109,9 +110,10 @@ function Feedback() {
     <div className='feedback relative '>
       <div className='max-w-7xl mx-auto'>
         <div className='md:flex md:justify-between w-full'>
-          <p className='new-arrivials-title-primary  mt-0 text-center not-last-of-type:'>
+          {/* <p className='new-arrivials-title-primary  mt-0 text-center not-last-of-type:'>
             What our customer says
-          </p>
+          </p> */}
+          <TitlePrimary>What our customer says</TitlePrimary>
           <div className='md:flex hidden md:gap-6 '>
             <div>
               <img
@@ -239,9 +241,7 @@ function Feedback() {
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => handleDotClick(i)}
                 className={`h-2.5 w-2.5 rounded-full cursor-pointer transition-colors duration-300 ${
-                  active
-                    ? "bg-[var(--color-text-dark)]"
-                    : "bg-[var(--color-text-grey)]"
+                  active ? "bg-text-dark" : "bg-text-grey"
                 }`}
               />
             );
