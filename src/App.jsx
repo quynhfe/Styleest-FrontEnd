@@ -1,20 +1,19 @@
 import "./index.css";
-import Header from "./sections/Header";
-import Hero from "./sections/Hero";
-import AboutUs from "./sections/AboutUs";
-import NewArrival from "./sections/NewArrival";
-import Banner from "./sections/Banner";
-import Categories from "./sections/Categories";
-import Feedback from "./sections/Feedback";
-import Articles from "./sections/Articles";
-import ShopNow from "./sections/ShopNow";
-import Footer from "./sections/Footer";
-import Collaboration from "./sections/Collaboration";
-
+import Header from "./sections/header";
+import Hero from "./sections/hero";
+import AboutUs from "./sections/about-us";
+import Banner from "./sections/banner";
+import Collaboration from "./sections/collaboration";
+import NewArrival from "./sections/new-arrival";
+import Category from "./sections/category";
+import Feedback from "./sections/feedback";
+import Article from "./sections/article";
+import ShopNow from "./sections/shop-now";
+import Footer from "./sections/footer";
 function App() {
   return (
-    <div className='app '>
-      <section className='header-hero '>
+    <div className='bg-bg-default'>
+      <section className=' relative z-1 h-200 2xl:max-h-190   w-full   bg-bg-secondary text-center overflow-hidden '>
         <div className='relative h-full w-full top-0 '>
           <Header></Header>
           <Hero />
@@ -31,7 +30,6 @@ function App() {
           />
         </picture>
       </section>
-
       <section className='about-us '>
         <div id='about-us'>
           <AboutUs />
@@ -51,7 +49,7 @@ function App() {
         <Banner />
       </section>
       <section>
-        <Categories />
+        <Category />
       </section>
       <section className='w-full'>
         <Feedback />
@@ -59,7 +57,7 @@ function App() {
 
       <section>
         <div id='articles' />
-        <Articles />
+        <Article />
       </section>
 
       <section className='w-full'>

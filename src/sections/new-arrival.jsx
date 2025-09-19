@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef, useMemo } from "react";
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import items from "../data/newArrival.json";
-import Link from "../components/Link";
-import Title from "../components/Title";
-import TitlePrimary from "../components/TitlePrimary";
+import Link from "../components/btn-link";
+import Title from "../components/title-default";
+import TitlePrimary from "../components/title-primary";
 
 const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(false);
@@ -142,22 +141,19 @@ function NewArrival() {
   };
 
   return (
-    <div className=' new-arrivials overflow-hidden'>
-      <div className='max-w-7xl mx-auto'>
-        {/* <h2 className='introdution-title text-center'>(New Arrival)</h2>
-         */}
+    <div className='lg:z-0 bg-bg-secondary w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) text-center gap-6 items-center justify-center font-bold md:pb-20 py-15 xl:pt-66.5 md:pt-52.75 lg:pt-53.5 pb-15 overflow-hidden'>
+      <div className='max-w-screen mx-auto'>
         <Title className={"mb-11.5 "}>New Arrival</Title>
-        {/* <h3 className='new-arrivials-title-primary'>
-          Explore our latest fashion arrivals
-        </h3> */}
         <TitlePrimary>Explore our latest fashion arrivals</TitlePrimary>
         <div className='flex justify-between items-center h-fit mt-6'>
-          <p className='total-items'>{items.length} items</p>
+          <p className='text-(--color-text-grey) tracking-(--t-16)'>
+            {items.length} items
+          </p>
           <Link className='mt-0'>See All Items</Link>
         </div>
         <div
           ref={sliderRef}
-          className='list-new-arrivials'
+          className='w-full mt-[32px] flex gap-5 md:grid md:grid-cols-3 md:grid-rows-3 xl:grid-cols-4 xl:grid-rows-2 md:gap-6 transition-transform duration-500 ease-in-out'
           style={{
             transform: isMobile
               ? `translateX(-${currentIndex * 278}px)`
@@ -171,29 +167,37 @@ function NewArrival() {
           {(isMobile ? extendedItems : items).map((item, index) => (
             <div
               key={`${item.originalId || item.id}-${index}`}
-              className='new-arrivial flex-shrink-0'
+              className='max-md:w-[258px] xl:w-[282px] lg:max-w-[391px] w-full md:col-span-1 md:row-span-1 flex flex-col items-center justify-center flex-shrink-0'
               onDragStart={(e) => e.preventDefault()}>
-              <div className='new-arrivial-img-box relative group'>
+              <div className='h-[328px] w-full overflow-hidden flex justify-start relative group'>
                 <img
-                  className='new-arrivial-img select-none'
+                  className='w-full h-full object-cover object-top transition-transform duration-300 origin-top hover:scale-120 select-none'
                   src={item.img}
                   alt={item.name}
                 />
-                <a className='btn-add-to-card-box opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
-                  <button className='btn-add-to-card'>Add to Cart</button>
+                <a className='h-[47px] mx-auto w-full absolute z-1 bottom-[26px] flex text-(--color-text-dark) items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
+                  <button className='h-[47px] mx-auto w-[calc(100%-40px)] bottom-[26px] flex bg-white rounded-[200px] text-(--color-text-dark) items-center justify-center'>
+                    Add to Cart
+                  </button>
                 </a>
               </div>
 
-              <div className='new-arrivial-des'>
-                <p className='new-arrivial-name'>{item.name}</p>
-                <div className='new-arrivial-price'>
+              <div className='w-full flex flex-col gap-2 mt-6 text-start items-start'>
+                <p className='lg:text-xl text-(--color-text-dark) font-(family-name:--font-header)'>
+                  {item.name}
+                </p>
+                <div className='flex gap-3 font-medium text-sm lg:text-(length:--text-16)'>
                   {item.salePrice && (
-                    <p className='sale-price block'>{item.salePrice} USD</p>
+                    <p className='tracking-(--t-14) text-(--color-text-brown) line-through'>
+                      {item.salePrice} USD
+                    </p>
                   )}
-                  <p className='price'>{item.price} USD</p>
+                  <p className='tracking-(--t-14) text-(--color-text-dark)'>
+                    {item.price} USD
+                  </p>
                 </div>
 
-                <div className='list-color'>
+                <div className='flex gap-1.5 items-center py-1.5'>
                   {item.colors.map((color) => {
                     const isActive = activeColor[item.id] === color;
                     return (
@@ -228,128 +232,3 @@ function NewArrival() {
 }
 
 export default NewArrival;
-
-// import { useEffect, useState } from "react";
-// import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-// import items from "../data/newArrival.json";
-
-// function NewArrival() {
-//   const [current, setCurrent] = useState(0);
-//   const [activeColor, setActiveColor] = useState({});
-//   const nextSlide = () => {
-//     setCurrent((prev) => (prev + 1) % items.length);
-//   };
-
-//   const prevSlide = () => {
-//     setCurrent((prev) => (prev - 1 + items.length) % items.length);
-//   };
-
-//   const handleColorClick = (itemId, color) => {
-//     const newActiveColor = { ...activeColor, [itemId]: color };
-//     setActiveColor(newActiveColor);
-//     localStorage.setItem("activeColor", JSON.stringify(newActiveColor));
-//   };
-
-//   useEffect(() => {
-//     const savedColors = localStorage.getItem("activeColor");
-//     if (savedColors) {
-//       setActiveColor(JSON.parse(savedColors));
-//     }
-//   }, []);
-
-//   const colorMap = {
-//     brown: "bg-(--color-item-brown)",
-//     green: "bg-(--color-item-green)",
-//     grey: "bg-(--color-item-grey)",
-//     white: "bg-white",
-//     black: "bg-(--color-text-dark)",
-//     blue: "bg-(--color-item-blue)",
-//   };
-//   return (
-//     <div className='relative new-arrivials overflow-hidden'>
-//       <h2 className='introdution-title lg:mt-47 text-center'>(New Arrival)</h2>;
-//       <h3 className='new-arrivials-title-primary'>
-//         Explore our latest fashion arrivals
-//       </h3>
-//       <div className='flex justify-between items-center h-fit  mt-6'>
-//         <p className='total-items'>{items?.length} items</p>
-//         <p className='see-collection mt-0'>See All Items</p>
-//       </div>
-//       <button
-//         onClick={prevSlide}
-//         className='  btn-next left-2'>
-//         <HiChevronLeft size={24} />
-//       </button>
-//       <div
-//         className='list-new-arrivials '
-//         style={{ transform: `translateX(-${current * 278}px)` }}>
-//         {items.map((item) => {
-//           return (
-//             <div
-//               key={item?.id}
-//               className='new-arrivial flex-shrink-0 '>
-//               <div className='new-arrivial-img-box relative group'>
-//                 <img
-//                   className='new-arrivial-img'
-//                   src={item?.img}
-//                   alt={item?.name}></img>
-//                 <a className='btn-add-to-card-box opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
-//                   <button className='btn-add-to-card'>Add to Cart</button>
-//                 </a>
-//               </div>
-
-//               <div className='new-arrivial-des'>
-//                 <p className='new-arrivial-name'>{item?.name}</p>
-//                 <div className='new-arrivial-price'>
-//                   {item?.salePrice && (
-//                     <p className='sale-price block'>{item.salePrice} USD</p>
-//                   )}
-//                   <p className='price'>{item?.price} USD</p>
-//                 </div>
-//                 <div className='list-color'>
-//                   {item?.colors.map((color) => {
-//                     const isActive = activeColor[item.id] === color;
-//                     return (
-//                       <div
-//                         key={color}
-//                         onClick={() => handleColorClick(item.id, color)}
-//                         className={`
-//                           color cursor-pointer
-//                           transition-colors  duration-300 ease-in ${
-//                             isActive
-//                               ? " bg-none border-(--color-border-item-active)"
-//                               : `border-(--color-border-item) ${colorMap[color]}`
-//                           }
-
-//                         `}>
-//                         <div
-//                           key={color}
-//                           className={`
-//                           w-3 h-3 cursor-pointer transition-shadow duration-300 ease-in-out rounded-full
-
-//                           ${colorMap[color]}
-//                           ${
-//                             isActive
-//                               ? "  shadow-(--color-boxshadow-items-color)"
-//                               : ` shadow-none ${colorMap[color]}`
-//                           }
-//                         `}></div>
-//                       </div>
-//                     );
-//                   })}
-//                 </div>
-//               </div>
-//             </div>
-//           );
-//         })}
-//       </div>
-//       <button
-//         onClick={nextSlide}
-//         className='btn-next right-2'>
-//         <HiChevronRight size={24} />
-//       </button>
-//     </div>
-//   );
-// }
-
-// export default NewArrival;

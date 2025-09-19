@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Button from "../components/Button";
+import Button from "../components/button";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
@@ -36,6 +36,14 @@ function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const Login = () => {
+    <Button
+      className={
+        "py-[14px] text-[14px] tracking-(--t-14)  lg:hidden cursor-pointer"
+      }>
+      Login
+    </Button>;
+  };
   return (
     <div className='relative z-1 top-0'>
       <header
@@ -54,8 +62,8 @@ function Header() {
               ? "bg-text-dark translate-y-[-109px]  md:translate-y-[-125px] "
               : ""
           }`}></div>
-        <nav className='lg:h-fit h-auto md:mx-0  text-white  flex justify-between items-center max-w-7xl mx-auto'>
-          <p className='cursor-pointer xl:w-65 font-(family-name:--font-header) uppercase md:text-[32px] lg:text-2xl text-2xl font-bold tracking-wide content-center flex items-center'>
+        <nav className='lg:h-fit h-auto md:mx-0  text-white  flex justify-between items-center max-w-screen mx-auto'>
+          <p className='tracking-(--t-48) cursor-pointer xl:w-65 font-(family-name:--font-header) uppercase md:text-(length:--text-32) lg:text-2xl text-2xl font-bold content-center flex items-center'>
             Styleest
           </p>
           <div
@@ -88,12 +96,8 @@ function Header() {
                 Articles
               </a>
             </div>
-            <div className={`${isMenuOpen ? "block " : "hidden"} `}>
-              <Button
-                bStyle={"py-[14px] w-35 text-[14px] cursor-pointer"}
-                aStyle={"h-[47px] lg:hidden "}>
-                Login
-              </Button>
+            <div className={`${isMenuOpen ? "block " : "hidden"} w-35 h-11.75`}>
+              <Login />
             </div>
           </div>
           <div className='flex items-center h-fit relative justify-between md:gap-5 gap-2.5  '>
@@ -133,12 +137,8 @@ function Header() {
                 </svg>
               )}
             </span>
-            <div className='lg:block hidden'>
-              <Button
-                bStyle={"py-[14px] w-35 cursor-pointer"}
-                aStyle={"h-[47px]  text-[14px]"}>
-                Login
-              </Button>
+            <div className='lg:block hidden w-35 h-11.75'>
+              <Login />
             </div>
           </div>
         </nav>

@@ -6,7 +6,7 @@ import React, {
   useLayoutEffect,
 } from "react";
 import feedbacks from "../data/feedback.json";
-import TitlePrimary from "../components/TitlePrimary";
+import TitlePrimary from "../components/title-primary";
 
 function Feedback() {
   const total = feedbacks.length;
@@ -107,14 +107,11 @@ function Feedback() {
   }, [currentIndex, total, extLen]);
 
   return (
-    <div className='feedback relative '>
-      <div className='max-w-7xl mx-auto'>
+    <div className='w-full xl:py-25 py-15 bg-bg-secondary px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) relative'>
+      <div className='max-w-screen mx-auto'>
         <div className='md:flex md:justify-between w-full'>
-          {/* <p className='new-arrivials-title-primary  mt-0 text-center not-last-of-type:'>
-            What our customer says
-          </p> */}
           <TitlePrimary>What our customer says</TitlePrimary>
-          <div className='md:flex hidden md:gap-6 '>
+          <div className='md:flex hidden md:gap-6'>
             <div>
               <img
                 onClick={prevSlide}
@@ -168,17 +165,18 @@ function Feedback() {
                 key={idx}
                 className='flex-shrink-0 md:p-0 p-2'
                 style={{ width: `${100 / extLen}%` }}>
-                <div className='a-feedback'>
-                  <div className='feedback-content'>
-                    <p className='feedback-content-title '>
+                <div className='mt-13.75 xl:mt-18 xl:gap-x-31.75 md:gap-x-21.25 md:text-start text-center grid grid-cols-2 grid-flow-row-dense h-fit'>
+                  <div className='col-span-full md:flex md:flex-col md:gap-6 md:justify-center md:col-span-1 text-(--color-text-dark-primary) md:col-start-2'>
+                    <p className='xl:text-(length:--text-32) xl:leading-[51.2px] md:text-2xl md:m-0 mb-4 md:leading-[38.4px] leading-[32px] text-[20px] font-bold'>
                       {fb?.product?.title}
                     </p>
-                    <p className='feedback-content-des'>
+                    <p className='xl:text-[20px] xl:leading-[32px] mb-8 md:m-0 md:leading-[25.6px] font-medium'>
                       “{fb?.product?.description}“
                     </p>
                     <div className='feedback-customer hidden md:flex'>
                       <div className='cus-avt'>
                         <img
+                          className='w-12 h-12 rounded-full overflow-hidden'
                           src={fb?.avatar}
                           alt={fb?.name}
                         />
@@ -191,15 +189,17 @@ function Feedback() {
                     </div>
                   </div>
 
-                  <div className='feedback-img'>
+                  <div className='w-full md:h-[436px] flex justify-end md:justify-start col-start-2 col-span-1 md:col-start-1 md:mr-20.5'>
                     <div className='hidden md:block xl:hidden'>
                       {fb?.product?.imgLg ? (
                         <img
+                          className='w-12 h-12 md:w-full md:h-full object-cover'
                           src={fb?.product?.imgLg}
                           alt={fb?.product?.title}
                         />
                       ) : (
                         <img
+                          className='w-12 h-12 md:w-full md:h-full object-cover'
                           src={fb?.product?.img}
                           alt={fb?.product?.title}
                         />
@@ -207,15 +207,16 @@ function Feedback() {
                     </div>
 
                     <img
-                      className='md:hidden block xl:block'
+                      className='md:hidden block xl:block w-12 h-12 md:w-full md:h-full object-cover'
                       src={fb?.product?.img}
                       alt={fb?.product?.title}
                     />
                   </div>
 
-                  <div className='feedback-customer md:hidden flex'>
+                  <div className='flex gap-3 col-span-1 md:col-start-2 md:hidden'>
                     <div className='cus-avt'>
                       <img
+                        className='w-12 h-12 rounded-full overflow-hidden'
                         src={fb?.avatar}
                         alt={fb?.name}
                       />
