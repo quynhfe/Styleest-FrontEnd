@@ -1,18 +1,18 @@
 [
   {
     "title": "TAYSON front side",
-    "imageUrl": "/images/about/taysonf.jpg"
+    "imageUrl": "/images/about/taysonf.avif"
   },
   {
     "title": "TAYSON behind side",
-    "imageUrl": "/images/about/taysonb.jpg"
+    "imageUrl": "/images/about/taysonb.avif"
   },
   {
     "title": "COUTU front side",
-    "imageUrl": "/images/about/coutuf.jpg"
+    "imageUrl": "/images/about/coutuf.avif"
   },
   {
     "title": "COUTU behind side",
-    "imageUrl": "/images/about/coutub.jpg"
+    "imageUrl": "/images/about/coutub.avif"
   }
 ]

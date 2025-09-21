@@ -33,6 +33,7 @@ function Articles() {
               }`}>
               <div className='lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 md:w-70.5 object-fill md:object-cover object-center overflow-hidden h-35 w-full md:flex md:justify-end md:col-start-2 lg:col-start-3'>
                 <img
+                  loading='lazy'
                   src={article?.img}
                   alt={article?.title}></img>
               </div>

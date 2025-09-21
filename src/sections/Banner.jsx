@@ -4,7 +4,8 @@ function Banner() {
   return (
     <div className='h-[622px] xl:h-[800px] relative'>
       <img
-        src='/images/banner/banner.jpg'
+        loading='lazy'
+        src='/images/banner/banner.avif'
         alt='Hero'
         className='h-full w-full object-top object-cover'
       />

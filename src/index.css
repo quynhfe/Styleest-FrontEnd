@@ -42,6 +42,7 @@
   --mx-xl: 113px;
 
   --text-16: 16px;
+  --text-20: 20px;
   --text-32: 32px;
 
   --t-64: 0.64px;
@@ -70,7 +71,7 @@
   }
 
   .img-taysonb {
-    @apply xl:h-[326px] lg:w-[310px] lg:h-66 absolute top-72.25 z-1 w-40 h-29.5 md:h-41 xl:w-[383px] md:w-[222px] row-span-2 col-span-2;
+    @apply xl:h-[326px] lg:w-[310px] xl:w-[383px] md:w-[222px] lg:h-66 w-40 h-29.5 md:h-41 absolute top-72.25 z-1   row-span-2 col-span-2;
   }
 
   .tayson-des {
@@ -82,7 +83,7 @@
   }
 
   .cus-name {
-    @apply text-(--color-text-dark);
+    @apply text-(--color-text-dark) xl:text-(length:--text-20);
   }
 
   .cus-job {
@@ -90,15 +91,15 @@
   }
 
   .img-taysonf img {
-    @apply w-full h-full object-top object-cover md:object-scale-down md:object-left-top;
+    @apply w-full h-full  object-top object-cover md:object-scale-down md:object-left-top;
   }
 
   .img-taysonb img {
-    @apply w-full h-full object-top object-cover;
+    @apply w-full h-full  object-top object-cover;
   }
 
   .cus-avt img {
-    @apply w-12 h-12 rounded-full overflow-hidden;
+    @apply w-12 h-12 xl:w-14 xl:h-14 rounded-full overflow-hidden;
   }
 
   .footer p {

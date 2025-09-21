@@ -3,7 +3,7 @@ import items from "../data/newArrival.json";
 import Link from "../components/btn-link";
 import Title from "../components/title-default";
 import TitlePrimary from "../components/title-primary";
-
+import Button from "../components/button";
 const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(false);
   useEffect(() => {
@@ -169,17 +169,16 @@ function NewArrival() {
               key={`${item.originalId || item.id}-${index}`}
               className='max-md:w-[258px] xl:w-[282px] lg:max-w-[391px] w-full md:col-span-1 md:row-span-1 flex flex-col items-center justify-center flex-shrink-0'
               onDragStart={(e) => e.preventDefault()}>
-              <div className='h-[328px] w-full overflow-hidden flex justify-start relative group'>
+              <div className='h-[328px] w-64.5 md:w-full   overflow-hidden flex justify-start relative group'>
                 <img
-                  className='w-full h-full object-cover object-top transition-transform duration-300 origin-top hover:scale-120 select-none'
+                  loading='lazy'
+                  className='w-full h-full md:max-w-100 lg:max-w-70.5 object-cover object-top transition-transform duration-300 origin-top hover:scale-120 select-none'
                   src={item.img}
                   alt={item.name}
                 />
-                <a className='h-[47px] mx-auto w-full absolute z-1 bottom-[26px] flex text-(--color-text-dark) items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
-                  <button className='h-[47px] mx-auto w-[calc(100%-40px)] bottom-[26px] flex bg-white rounded-[200px] text-(--color-text-dark) items-center justify-center'>
-                    Add to Cart
-                  </button>
-                </a>
+                <div className='h-[47px] w-64.5 md:w-full md:max-w-100 lg:max-w-70.5 absolute z-1 bottom-[26px] flex text-(--color-text-dark) items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
+                  <Button className=' mx-5 w-full '>Add to Cart</Button>
+                </div>
               </div>
 
               <div className='w-full flex flex-col gap-2 mt-6 text-start items-start'>
@@ -204,7 +203,7 @@ function NewArrival() {
                       <div
                         key={color}
                         onClick={() => handleColorClick(item.id, color)}
-                        className={`color cursor-pointer transition-colors duration-300 ease-in ${
+                        className={`flex justify-center items-center w-5 h-5 rounded-full border-1 cursor-pointer transition-colors duration-300 ease-in ${
                           isActive
                             ? "bg-none border-(--color-border-item-active)"
                             : `border-(--color-border-item) ${colorMap[color]}`

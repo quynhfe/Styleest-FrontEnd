@@ -42,9 +42,10 @@ function Category() {
               }`}
               key={categorie?.id}>
               <div
-                className={` xl:w-full xl:h-full xl:row-span-2 lg:h-[272px] md:h-[221px] md:w-full md:col-span-1 xl:overflow-hidden h-[311px] w-[384px]`}>
+                className={`max-md:w-96 max-md:77.5 xl:w-full xl:h-full xl:row-span-2 lg:h-[272px] md:h-[221px] md:w-full md:col-span-1 xl:overflow-hidden h-[311px] w-[384px]`}>
                 <img
-                  className={`h-full w-full object-cover xl:transition-transform xl:duration-300 xl:group-hover:scale-110 ${
+                  loading='lazy'
+                  className={`max-md:w-96 max-md:77.5 h max-h-100 md:max-w-125 lg:max-w-200 lg:max-h-200  h-full w-full object-cover xl:transition-transform xl:duration-300 xl:group-hover:scale-110 ${
                     imgPosition[categorie?.name]
                   } `}
                   src={categorie?.img}

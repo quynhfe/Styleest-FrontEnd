@@ -3,34 +3,34 @@
     "id": 1,
     "name": "Rolando Doner",
     "job": "Fashion Stylist",
-    "avatar": "/images/feedback/avt-doner.jpg",
+    "avatar": "/images/feedback/avt-doner.avif",
     "product": {
       "title": "Absolutely thrilled with my recent purchase from Styleest.",
       "description": "The quality of the clothing exceeded my expectations, and the attention to detail in the design is impeccable. Not only did I receive compliments on my outfit, but the entire shopping experience was seamless.",
-      "img": "/images/feedback/doner.jpg",
-      "imgLg": "/images/feedback/doner-lg.jpg"
+      "img": "/images/feedback/doner.avif",
+      "imgLg": "/images/feedback/doner-lg.avif"
     }
   },
   {
     "id": 2,
     "name": "Jhon Sabreta",
     "job": "Employee",
-    "avatar": "/images/feedback/avt-sabreta.jpg",
+    "avatar": "/images/feedback/avt-sabreta.avif",
     "product": {
       "title": "As someone who values both style and comfort in this blazer.",
       "description": "The fabric is not only luxurious but also breathable, making it ideal for various occasions. The tailored fit gives it a modern and polished look, ensuring that I feel confident and put-together whenever I wear it.",
-      "img": "/images/feedback/sabreta.jpg"
+      "img": "/images/feedback/sabreta.avif"
     }
   },
   {
     "id": 3,
     "name": "Dona Saramanda",
     "job": "GYM Instructure",
-    "avatar": "/images/feedback/avt-saramanda.jpg",
+    "avatar": "/images/feedback/avt-saramanda.avif",
     "product": {
       "title": "As someone who values both style and comfort in this blazer.",
       "description": "The fabric is not only luxurious but also breathable, making it ideal for various occasions. The tailored fit gives it a modern and polished look, ensuring that I feel confident and put-together whenever I wear it.",
-      "img": "/images/feedback/saramanda.jpg"
+      "img": "/images/feedback/saramanda.avif"
     }
   }
 ]

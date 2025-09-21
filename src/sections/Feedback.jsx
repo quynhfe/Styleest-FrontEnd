@@ -114,6 +114,7 @@ function Feedback() {
           <div className='md:flex hidden md:gap-6'>
             <div>
               <img
+                loading='lazy'
                 onClick={prevSlide}
                 className='w-10 h-10 xl:w-[55px] xl:h-[55px] mx-auto'
                 src='/images/feedback/mui-ten-trai.svg'
@@ -122,6 +123,7 @@ function Feedback() {
             </div>
             <div>
               <img
+                loading='lazy'
                 onClick={nextSlide}
                 className='w-10 h-10 xl:w-[55px] xl:h-[55px] mx-auto'
                 src='/images/feedback/mui-ten-phai.svg'
@@ -145,6 +147,7 @@ function Feedback() {
           }}>
           <div className='absolute left-0 md:left-21.25 md:top-20 xl:top-10 top-5 w-full z-[-1] pointer-events-none'>
             <img
+              loading='lazy'
               className='w-40 h-25 xl:w-50 xl:h-40 mx-auto'
               src='/images/feedback/dau-ngoac-kep.svg'
               alt='Dấu ngoặc kép'
@@ -173,10 +176,11 @@ function Feedback() {
                     <p className='xl:text-[20px] xl:leading-[32px] mb-8 md:m-0 md:leading-[25.6px] font-medium'>
                       “{fb?.product?.description}“
                     </p>
-                    <div className='feedback-customer hidden md:flex'>
+                    <div className=' gap-3  col-span-1 hidden md:flex'>
                       <div className='cus-avt'>
                         <img
-                          className='w-12 h-12 rounded-full overflow-hidden'
+                          loading='lazy'
+                          className='w-12 h-12 xl:w-14 xl:h-14 rounded-full overflow-hidden'
                           src={fb?.avatar}
                           alt={fb?.name}
                         />
@@ -193,12 +197,14 @@ function Feedback() {
                     <div className='hidden md:block xl:hidden'>
                       {fb?.product?.imgLg ? (
                         <img
-                          className='w-12 h-12 md:w-full md:h-full object-cover'
+                          loading='lazy'
+                          className='w-12 h-12 xl:w-14 xl:h-14 md:w-full md:h-full object-cover'
                           src={fb?.product?.imgLg}
                           alt={fb?.product?.title}
                         />
                       ) : (
                         <img
+                          loading='lazy'
                           className='w-12 h-12 md:w-full md:h-full object-cover'
                           src={fb?.product?.img}
                           alt={fb?.product?.title}
@@ -207,6 +213,7 @@ function Feedback() {
                     </div>
 
                     <img
+                      loading='lazy'
                       className='md:hidden block xl:block w-12 h-12 md:w-full md:h-full object-cover'
                       src={fb?.product?.img}
                       alt={fb?.product?.title}
@@ -216,6 +223,7 @@ function Feedback() {
                   <div className='flex gap-3 col-span-1 md:col-start-2 md:hidden'>
                     <div className='cus-avt'>
                       <img
+                        loading='lazy'
                         className='w-12 h-12 rounded-full overflow-hidden'
                         src={fb?.avatar}
                         alt={fb?.name}

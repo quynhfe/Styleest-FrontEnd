@@ -37,12 +37,11 @@ function Header() {
   }, []);
 
   const Login = () => {
-    <Button
-      className={
-        "py-[14px] text-[14px] tracking-(--t-14)  lg:hidden cursor-pointer"
-      }>
-      Login
-    </Button>;
+    return (
+      <Button className='py-[14px] text-[14px] tracking-(--t-14) cursor-pointer'>
+        Login
+      </Button>
+    );
   };
   return (
     <div className='relative z-1 top-0'>
@@ -137,7 +136,7 @@ function Header() {
                 </svg>
               )}
             </span>
-            <div className='lg:block hidden w-35 h-11.75'>
+            <div className=' lg:block hidden w-35 h-11.75'>
               <Login />
             </div>
           </div>
