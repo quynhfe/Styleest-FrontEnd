@@ -16,7 +16,7 @@ function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className='bg-bg-default'>
-        <section className=' relative z-1 h-200 2xl:max-h-190   w-full   bg-bg-secondary text-center overflow-hidden '>
+        <section className=' relative z-1 h-200 2xl:max-h-230   w-full   bg-bg-secondary text-center overflow-hidden '>
           <div className='relative h-full w-full top-0 '>
             <Header></Header>
             <Hero />
@@ -30,7 +30,7 @@ function App() {
               src='/images/hero/hero-mobile.avif'
               alt='Hero'
               loading='lazy'
-              className='h-full w-full  object-cover object-center md:object-[35%_-40px] md:scale-105 lg:object-left-top lg:scale-112'
+              className='h-full w-full  object-cover object-center md:object-[35%_-40px] md:scale-105 lg:object-left-top lg:scale-112 2xl:scale-100 2xl:object-[center_-40px] '
             />
           </picture>
         </section>

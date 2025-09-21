@@ -38,7 +38,9 @@ function Header() {
 
   const Login = () => {
     return (
-      <Button className='py-[14px] text-[14px] tracking-(--t-14) cursor-pointer'>
+      <Button
+        isBig={false}
+        className='py-[14px] text-[14px] tracking-(--t-14) cursor-pointer'>
         Login
       </Button>
     );

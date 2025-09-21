@@ -194,28 +194,17 @@ function Feedback() {
                   </div>
 
                   <div className='w-full md:h-[436px] flex justify-end md:justify-start col-start-2 col-span-1 md:col-start-1 md:mr-20.5'>
-                    <div className='hidden md:block xl:hidden'>
-                      {fb?.product?.imgLg ? (
-                        <img
-                          loading='lazy'
-                          className='w-12 h-12 xl:w-14 xl:h-14 md:w-full md:h-full object-cover'
-                          src={fb?.product?.imgLg}
-                          alt={fb?.product?.title}
-                        />
-                      ) : (
-                        <img
-                          loading='lazy'
-                          className='w-12 h-12 md:w-full md:h-full object-cover'
-                          src={fb?.product?.img}
-                          alt={fb?.product?.title}
-                        />
-                      )}
-                    </div>
-
                     <img
                       loading='lazy'
                       className='md:hidden block xl:block w-12 h-12 md:w-full md:h-full object-cover'
                       src={fb?.product?.img}
+                      alt={fb?.product?.title}
+                    />
+
+                    <img
+                      loading='lazy'
+                      className='hidden md:block xl:hidden w-12 h-12 xl:w-14 xl:h-14 md:w-full md:h-full object-cover'
+                      src={fb?.product?.imgLg || fb?.product?.img}
                       alt={fb?.product?.title}
                     />
                   </div>

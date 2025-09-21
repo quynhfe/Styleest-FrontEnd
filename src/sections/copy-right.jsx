@@ -2,7 +2,7 @@ import React from "react";
 
 function CopyRight() {
   return (
-    <div className='lg:pt-9 lg:pb-6.25 md:pt-11.75 md:pb-9 pt-6.75 pb-4 items-center  border-t-1 border-[#474747] text-sm'>
+    <div className='lg:pt-9  bg-text-dark lg:pb-6.25 md:pt-11.75 md:pb-9 pt-6.75 pb-4 items-center  border-t-1 border-[#474747] text-sm'>
       <div className='max-w-7xl mx-auto'>
         <div className=' lg:flex lg:justify-between'>
           <p className='opacity-70'>

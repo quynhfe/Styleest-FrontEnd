@@ -66,8 +66,10 @@ function Category() {
                       {categorie?.description}
                     </p>
                     <div className='md:w-86.25 xl:row-start-3 xl:col-start-3 right-0 md:justify-end xl:justify-start hidden xl:flex items-stretch justify-center overflow-hidden xl:opacity-0 xl:group-hover:opacity-100 transform transition-discrete duration-100'>
-                      <div className='w-fit h-11.75'>
-                        <Button className={"py-[14px] text-[14px] "}>
+                      <div className='w-fit h-11.75 '>
+                        <Button
+                          isBig={false}
+                          className=' text-[14px] '>
                           Explore Now
                         </Button>
                       </div>

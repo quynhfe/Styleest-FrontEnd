@@ -177,7 +177,11 @@ function NewArrival() {
                   alt={item.name}
                 />
                 <div className='h-[47px] w-64.5 md:w-full md:max-w-100 lg:max-w-70.5 absolute z-1 bottom-[26px] flex text-(--color-text-dark) items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
-                  <Button className=' mx-5 w-full '>Add to Cart</Button>
+                  <Button
+                    animation={false}
+                    className=' mx-5 w-full '>
+                    Add to Cart
+                  </Button>
                 </div>
               </div>
 
