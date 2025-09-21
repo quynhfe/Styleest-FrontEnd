@@ -45,7 +45,7 @@ function Header() {
   };
   return (
     <div className='relative z-1 top-0'>
-      <header
+      <div
         className={` py-8.25  lg:py-4 md:pt-11 lg:border-b-[0.5px] lg:border-(--color-boxshadow-header)  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) ${
           isMenuOpen ? `lg:bg-inherit  ` : ``
         }`}>
@@ -144,7 +144,7 @@ function Header() {
             </div>
           </nav>
         </div>
-      </header>
+      </div>
     </div>
   );
 }
