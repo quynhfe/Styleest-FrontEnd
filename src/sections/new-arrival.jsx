@@ -142,7 +142,7 @@ function NewArrival() {
 
   return (
     <div className='lg:z-0 bg-bg-secondary w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) text-center gap-6 items-center justify-center font-bold md:pb-20 py-15 xl:pt-66.5 md:pt-52.75 lg:pt-53.5 pb-15 overflow-hidden'>
-      <div className='max-w-screen mx-auto'>
+      <div className='max-w-7xl mx-auto'>
         <Title className={"mb-11.5 "}>New Arrival</Title>
         <TitlePrimary>Explore our latest fashion arrivals</TitlePrimary>
         <div className='flex justify-between items-center h-fit mt-6'>

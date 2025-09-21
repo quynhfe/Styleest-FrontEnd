@@ -108,7 +108,7 @@ function Feedback() {
 
   return (
     <div className='w-full xl:py-25 py-15 bg-bg-secondary px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) relative'>
-      <div className='max-w-screen mx-auto'>
+      <div className='max-w-7xl mx-auto'>
         <div className='md:flex md:justify-between w-full'>
           <TitlePrimary>What our customer says</TitlePrimary>
           <div className='md:flex hidden md:gap-6'>

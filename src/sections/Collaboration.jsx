@@ -86,7 +86,7 @@ function Collaboration() {
 
   return (
     <div className='px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl)'>
-      <div className='flex flex-col max-w-screen mx-auto'>
+      <div className='flex flex-col max-w-7xl mx-auto'>
         {collaborationData.map((item) => (
           <CollaborationSection
             key={item.id}

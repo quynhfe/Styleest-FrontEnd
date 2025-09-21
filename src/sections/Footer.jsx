@@ -4,8 +4,8 @@ import { BsTwitterX } from "react-icons/bs";
 
 function Footer() {
   return (
-    <div className='pt-16 text-center bg-text-dark relative w-full'>
-      <div className='lg:text-start lg:grid-flow-col-dense grid grid-flow-row px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-xl) max-w-screen mx-auto'>
+    <div className='pt-16 text-center bg-text-dark relative w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-xl)'>
+      <div className='lg:text-start lg:grid-flow-col-dense grid grid-flow-row  max-w-7xl mx-auto'>
         <div className='flex flex-col gap-6 lg:col-span-1 xl:w-[379px] lg:w-[338px]'>
           <h1 className='text-white text-[42px] font-(family-name:--font-header) font-bold uppercase'>
             Styleest
@@ -52,14 +52,16 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className='lg:pt-9 lg:pb-6.25 md:pt-11.75 md:pb-9 pt-6.75 pb-4 items-center px-(--mx-sm)  xl:px-(--mx-xl) max-w-screen lg:px-(--mx-md) border-t-1 border-[#474747] text-sm'>
-        <div className='max-w-screen mx-auto lg:flex lg:justify-between'>
-          <p className='opacity-70'>
-            Copyright© 2023. Agensip Creative Agency. All Right Reserved.
-          </p>
-          <div className='opacity-70 flex gap-8 justify-center mt-3 lg:m-0'>
-            <p>Terms of Service</p>
-            <p>Privacy Policy</p>
+      <div className='lg:pt-9 lg:pb-6.25 md:pt-11.75 md:pb-9 pt-6.75 pb-4 items-center  border-t-1 border-[#474747] text-sm'>
+        <div className='max-w-7xl mx-auto'>
+          <div className=' lg:flex lg:justify-between'>
+            <p className='opacity-70'>
+              Copyright© 2023. Agensip Creative Agency. All Right Reserved.
+            </p>
+            <div className='opacity-70 flex gap-8 justify-center mt-3 lg:m-0'>
+              <p>Terms of Service</p>
+              <p>Privacy Policy</p>
+            </div>
           </div>
         </div>
       </div>

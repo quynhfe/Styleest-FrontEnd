@@ -11,7 +11,7 @@ const Feedback = lazy(() => import("./sections/feedback"));
 const Article = lazy(() => import("./sections/article"));
 const ShopNow = lazy(() => import("./sections/shop-now"));
 const Footer = lazy(() => import("./sections/footer"));
-
+const CopyRight = lazy(() => import("./sections/copy-right"));
 function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -69,6 +69,7 @@ function App() {
         </section>
         <section className='w-full'>
           <Footer />
+          <CopyRight />
         </section>
       </div>
     </Suspense>
