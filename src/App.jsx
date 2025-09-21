@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import "./index.css";
-const Header = lazy(() => import("./sections/header"));
-const Hero = lazy(() => import("./sections/hero"));
+import Header from "./sections/header.jsx";
+import Hero from "./sections/hero.jsx";
 const AboutUs = lazy(() => import("./sections/about-us"));
 const Banner = lazy(() => import("./sections/banner"));
 const Collaboration = lazy(() => import("./sections/collaboration"));
