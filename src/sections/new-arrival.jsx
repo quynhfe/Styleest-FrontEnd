@@ -142,7 +142,7 @@ function NewArrival() {
 
   return (
     <div className='lg:z-0 bg-bg-secondary w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) text-center gap-6 items-center justify-center font-bold md:pb-20 py-15 xl:pt-66.5 md:pt-52.75 lg:pt-53.5 pb-15 overflow-hidden'>
-      <div className='max-w-7xl mx-auto'>
+      <div className='max-w-300 mx-auto'>
         <Title className={"mb-11.5 "}>New Arrival</Title>
         <TitlePrimary>Explore our latest fashion arrivals</TitlePrimary>
         <div className='flex justify-between items-center h-fit mt-6'>
@@ -169,10 +169,11 @@ function NewArrival() {
               key={`${item.originalId || item.id}-${index}`}
               className='max-md:w-[258px] xl:w-[282px] lg:max-w-[391px] w-full md:col-span-1 md:row-span-1 flex flex-col items-center justify-center flex-shrink-0'
               onDragStart={(e) => e.preventDefault()}>
-              <div className='h-[328px] w-64.5 md:w-full   overflow-hidden flex justify-start relative group'>
+              <div className='h-82 w-64.5 md:w-full   overflow-hidden flex justify-start relative group'>
                 <img
+                  decoding='async'
                   loading='lazy'
-                  className='w-full h-full md:max-w-100 lg:max-w-70.5 object-cover object-top transition-transform duration-300 origin-top hover:scale-120 select-none'
+                  className='w-64.5 h-82 md:w-full  md:h-full md:max-w-100 lg:max-w-70.5 object-cover object-top transition-transform duration-300 origin-top hover:scale-120 select-none'
                   src={item.img}
                   alt={item.name}
                 />

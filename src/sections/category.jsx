@@ -29,7 +29,7 @@ const categoryPosition = {
 function Category() {
   return (
     <div className='lg:py-30 md:py-20 md:text-start text-center pt-15 pb-7 px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl)'>
-      <div className='max-w-7xl mx-auto'>
+      <div className='max-w-300 mx-auto'>
         <Title className='md:mb-4 lg:mb-6 text-center'>Categories</Title>
         <TitlePrimary className={"lg:mb-15.25 mb-10 mt-3"}>
           Curated products
@@ -45,6 +45,7 @@ function Category() {
                 <div
                   className={`max-md:w-96 max-md:77.5 xl:w-full xl:h-full xl:row-span-2 lg:h-[272px] md:h-[221px] md:w-full md:col-span-1 xl:overflow-hidden h-[311px] w-[384px]`}>
                   <img
+                    decoding='async'
                     loading='lazy'
                     className={`max-md:w-96 max-md:77.5 h max-h-100 md:max-w-125 lg:max-w-200 lg:max-h-200  h-full w-full object-cover xl:transition-transform xl:duration-300 xl:group-hover:scale-110 ${
                       imgPosition[categorie?.name]

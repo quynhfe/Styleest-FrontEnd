@@ -63,9 +63,9 @@ function Header() {
               ? "bg-text-dark translate-y-[-109px]  md:translate-y-[-125px] "
               : ""
           }`}></div>
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-300 mx-auto'>
           <nav className='lg:h-fit h-auto md:mx-0  text-white  flex justify-between items-center '>
-            <p className='tracking-(--t-48) cursor-pointer xl:w-65 font-(family-name:--font-header) uppercase md:text-(length:--text-32) lg:text-2xl text-2xl font-bold content-center flex items-center'>
+            <p className='md:tracking-(--t-64) tracking-(--t-48) cursor-pointer xl:w-65 font-(family-name:--font-header) uppercase md:text-(length:--text-32) lg:text-2xl text-2xl font-bold content-center flex items-center'>
               Styleest
             </p>
             <div

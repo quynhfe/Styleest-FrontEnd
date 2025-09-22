@@ -3,7 +3,7 @@ import Button from "../components/button";
 function Hero() {
   return (
     <div className='px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) '>
-      <div className='max-w-7xl mx-auto'>
+      <div className='max-w-300 mx-auto'>
         <div className='h-max  mt-[295px] grid grid-flow-row grid-cols-1  gap-4 md:grid-cols-4 md:gap-y-11 md:gap-x-22 lg:gap-y-4 lg:grid-cols-5 xl:gap-y-4 items-center   text-(--color-bg-secondary) md:mt-85 lg:mt-[49px] xl:mt-[77px]  '>
           <div className='hidden w-full md:col-span-1  lg:flex lg:flex-col  lg:col-start-5  gap-4 justify-end text-right lg:mb-16 lg:justify-items-end items-end  '>
             <p className='text-2xl lg:leading-[45px] lg:col-span-2 lg:text-wrap md:text-[28px] lg:text-(length:--text-32) font-bold font-(family-name:--font-header) text-nowrap md:w-[286px]'>

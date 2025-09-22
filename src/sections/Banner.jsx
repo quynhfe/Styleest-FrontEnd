@@ -4,13 +4,14 @@ function Banner() {
   return (
     <div className='h-[622px] xl:h-[800px] relative'>
       <img
+        decoding='async'
         loading='lazy'
         src='/images/banner/banner.avif'
         alt='Hero'
         className='h-full w-full object-top object-cover'
       />
       <div className='absolute w-full z-10 top-82 md:top-105.5 xl:top-120.25 px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl)'>
-        <div className=' md:grid md:grid-flow-col-dense lg:grid-cols-2  xl:grid-cols-none gap-x-6 xl:gap-x-27 md:grid-rows-1 text-white flex flex-col gap-6 justify-center items-center md:items-start text-center max-w-7xl mx-auto'>
+        <div className=' md:grid md:grid-flow-col-dense lg:grid-cols-2  xl:grid-cols-none gap-x-6 xl:gap-x-27 md:grid-rows-1 text-white flex flex-col gap-6 justify-center items-center md:items-start text-center max-w-300 mx-auto'>
           <p className='xl:leading-[86.4px]  xl:text-7xl   md:text-start md:text-[38px] md:leading-[45.6px] md:col-span-1 font-bold text-[28px] leading-[33.6px]'>
             Get everyting you need for your fashion look and life style
           </p>

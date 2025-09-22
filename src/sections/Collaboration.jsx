@@ -12,6 +12,7 @@ function CollaborationSection({ sectionData }) {
         <img
           className='max-md:max-w-200 max-md:h-78 md:max-w-56 md:max-h-69 lg:max-h-120 lg:max-w-100 xl:max-h-200'
           loading='lazy'
+          decoding='async'
           src={sectionData.image1.url}
           alt={sectionData.image1.alt}
         />
@@ -20,6 +21,7 @@ function CollaborationSection({ sectionData }) {
         <img
           className='max-md:w-40 max-md:h-29.5 md:max-w-56 md:max-h-45 lg:max-h-100 lg:max-w-100 '
           loading='lazy'
+          decoding='async'
           src={sectionData.image2.url}
           alt={sectionData.image2.alt}
         />
@@ -75,7 +77,8 @@ function Collaboration() {
       layout: {
         container:
           "max-md:py-15 w-full max-md:gap-y-16.75 md:gap-x-21.75 lg:gap-x-16 xl:gap-x-[126px] lg:pt-0 md:pb-0 grid grid-flow-row-dense md:grid-rows-none md:grid-flow-col-dense relative md:mt-40 md:mb-9.5 lg:mt-45 xl:mt-[208px]",
-        image1Container: "img-taysonf md:col-start-2 lg:flex lg:justify-end",
+        image1Container:
+          "overflow-hidden img-taysonf md:col-start-2 lg:flex lg:justify-end",
         image2Container:
           "img-taysonb md:top-70 lg:top-95 xl:top-120 left-0 row-start-4 col-start-1",
         textContainer:
@@ -86,7 +89,7 @@ function Collaboration() {
 
   return (
     <div className='px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl)'>
-      <div className='flex flex-col max-w-7xl mx-auto'>
+      <div className='flex flex-col max-w-300 mx-auto'>
         {collaborationData.map((item) => (
           <CollaborationSection
             key={item.id}

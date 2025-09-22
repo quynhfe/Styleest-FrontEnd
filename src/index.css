@@ -1,10 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Plus Jakarta Sans";
-  --font-header: "Space Grotesk";
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-header: "Space Grotesk", system-ui, sans-serif;
   --color-bg-default: #f9f7f5;
   --color-bg-secondary: #f8f3ef;
 
@@ -45,6 +43,7 @@
   --text-20: 20px;
   --text-32: 32px;
 
+  --t-84: 0.84px;
   --t-64: 0.64px;
   --t-48: 0.48px;
   --t-32: 0.32px;

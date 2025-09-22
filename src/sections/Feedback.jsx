@@ -108,12 +108,13 @@ function Feedback() {
 
   return (
     <div className='w-full xl:py-25 py-15 bg-bg-secondary px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) relative'>
-      <div className='max-w-7xl mx-auto'>
+      <div className='max-w-300 mx-auto'>
         <div className='md:flex md:justify-between w-full'>
           <TitlePrimary>What our customer says</TitlePrimary>
           <div className='md:flex hidden md:gap-6'>
             <div>
               <img
+                decoding='async'
                 loading='lazy'
                 onClick={prevSlide}
                 className='w-10 h-10 xl:w-[55px] xl:h-[55px] mx-auto'
@@ -123,6 +124,7 @@ function Feedback() {
             </div>
             <div>
               <img
+                decoding='async'
                 loading='lazy'
                 onClick={nextSlide}
                 className='w-10 h-10 xl:w-[55px] xl:h-[55px] mx-auto'
@@ -147,6 +149,7 @@ function Feedback() {
           }}>
           <div className='absolute left-0 md:left-21.25 md:top-20 xl:top-10 top-5 w-full z-[-1] pointer-events-none'>
             <img
+              decoding='async'
               loading='lazy'
               className='w-40 h-25 xl:w-50 xl:h-40 mx-auto'
               src='/images/feedback/dau-ngoac-kep.svg'
@@ -179,6 +182,7 @@ function Feedback() {
                     <div className=' gap-3  col-span-1 hidden md:flex'>
                       <div className='cus-avt'>
                         <img
+                          decoding='async'
                           loading='lazy'
                           className='w-12 h-12 xl:w-14 xl:h-14 rounded-full overflow-hidden'
                           src={fb?.avatar}
@@ -195,6 +199,7 @@ function Feedback() {
 
                   <div className='w-full md:h-[436px] flex justify-end md:justify-start col-start-2 col-span-1 md:col-start-1 md:mr-20.5'>
                     <img
+                      decoding='async'
                       loading='lazy'
                       className='md:hidden block xl:block w-12 h-12 md:w-full md:h-full object-cover'
                       src={fb?.product?.img}
@@ -202,6 +207,7 @@ function Feedback() {
                     />
 
                     <img
+                      decoding='async'
                       loading='lazy'
                       className='hidden md:block xl:hidden w-12 h-12 xl:w-14 xl:h-14 md:w-full md:h-full object-cover'
                       src={fb?.product?.imgLg || fb?.product?.img}
@@ -212,6 +218,7 @@ function Feedback() {
                   <div className='flex gap-3 col-span-1 md:col-start-2 md:hidden'>
                     <div className='cus-avt'>
                       <img
+                        decoding='async'
                         loading='lazy'
                         className='w-12 h-12 rounded-full overflow-hidden'
                         src={fb?.avatar}

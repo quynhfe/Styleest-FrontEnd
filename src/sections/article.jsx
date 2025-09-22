@@ -5,8 +5,8 @@ import articles from "../data/articles.json";
 
 function Articles() {
   return (
-    <div className='grid grid-flow-row-dense md:grid-flow-col-dense lg:py-30 md:py-20 md:text-start text-center pt-15 pb-7 px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-xl) '>
-      <div className='max-w-7xl mx-auto'>
+    <div className=' px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-xl) '>
+      <div className='max-w-300 mx-auto grid grid-flow-row-dense md:grid-flow-col-dense lg:py-30 md:py-20 md:text-start text-center pt-15 pb-7'>
         <Title className='md:text-start'>Articles</Title>
 
         <TitlePrimary
@@ -32,6 +32,7 @@ function Articles() {
                 }`}>
                 <div className='lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 md:w-70.5 object-fill md:object-cover object-center overflow-hidden h-35 w-full md:flex md:justify-end md:col-start-2 lg:col-start-3'>
                   <img
+                    decoding='async'
                     loading='lazy'
                     src={article?.img}
                     alt={article?.title}></img>
@@ -40,7 +41,7 @@ function Articles() {
                   <p className='xl:text-2xl mt-6 mb-2.5 font-bold text-[20px] font-(family-name:--font-header) md:text-2xl m-0 text-(--color-text-dark) lg:col-span-1 lg:leading-[38.4px] hover:underline decoration-(--color-text-dark)'>
                     {article?.title}
                   </p>
-                  <div className='xl:pr-12 flex items-center gap-5.25 text-(--color-text-dark-primary) font-medium'>
+                  <div className='xl:pr-12 tracking-(--t-16) flex items-center gap-5.25 text-(--color-text-dark-primary) font-medium'>
                     <p className='article-date'>{article?.date}</p>
                     <div className='rounded-full w-2 h-2 md:w-2.5 md:h-2.5 bg-dot'></div>
                     <p className='article-time'>{article?.time} min read</p>
