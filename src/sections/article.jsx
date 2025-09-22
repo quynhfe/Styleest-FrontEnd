@@ -6,32 +6,32 @@ import articles from "../data/articles.json";
 function Articles() {
   return (
     <div className=' px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-xl) '>
-      <div className='max-w-300 mx-auto grid grid-flow-row-dense md:grid-flow-col-dense lg:py-30 md:py-20 md:text-start text-center pt-15 pb-7'>
-        <Title className='md:text-start'>Articles</Title>
-
+      <div className='max-w-300 mx-auto grid grid-flow-row-dense md:grid-flow-col-dense lg:py-30 md:py-20 md:text-start text-center pt-15 pb-70'>
+        <Title className='md:text-start md:mb-4'>Articles</Title>
         <TitlePrimary
           className={
-            "mt-5.5 md:mt-0 md:mb-8 mb-9 md:col-span-2 md:text-start md:text-nowrap"
+            "mt-5.5 md:mt-0 md:mb-3 mb-8 xl:mb-3 md:col-span-2 md:text-start md:text-nowrap"
           }>
           Stay inspired with our blogs
         </TitlePrimary>
         <div className='flex h-fit row-start-5 md:col-start-3 md:row-start-2 md:justify-end justify-center md:items-start items-center'>
-          <Link className='h-fit  mt-10 mb-9 md:mb-0 transform hover:tracking-wider perspective-distant origin-left text-nowrap   md:mt-[11px]  transition-[letter-spacing] duration-300 ease-in-out'>
+          <Link className='h-fit  mt-10 mb-9 md:mb-0 transform hover:tracking-wider perspective-distant origin-left text-nowrap   md:mt-2.75 xl:mt-5.5 transition-[letter-spacing] duration-300 ease-in-out'>
             More Articles
           </Link>
         </div>
-        <div className='flex flex-col gap-5 md:row-start-3 md:col-span-3'>
+        <div className=' flex flex-col gap-5 md:gap-0 md:row-start-3 md:col-span-3'>
           {articles?.map((article, index) => {
             return (
               <div
                 key={article?.id}
-                className={`md:py-11 lg:gap-x-8 text-start grid grid-flow-row-dense md:grid-cols-2 gap-4 pb-5 ${
+                className={`group md:py-11 lg:gap-x-8 text-start grid grid-flow-row-dense md:grid-cols-2 gap-4 pb-5 ${
                   index === articles.length - 1
                     ? ""
                     : "border-b-1 border-(--color-text-dark-muted)"
                 }`}>
-                <div className='lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-110 md:w-70.5 object-fill md:object-cover object-center overflow-hidden h-35 w-full md:flex md:justify-end md:col-start-2 lg:col-start-3'>
+                <div className='   object-fill md:object-cover object-center overflow-hidden h-35 w-full md:flex md:justify-end md:col-start-2 lg:col-start-3'>
                   <img
+                    className='md:w-70.5 lg:transition-transform lg:duration-300 lg:ease-in-out lg:group-hover:scale-115'
                     decoding='async'
                     loading='lazy'
                     src={article?.img}
