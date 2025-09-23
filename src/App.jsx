@@ -81,8 +81,8 @@
 // export default App;
 import React, { Suspense, lazy } from "react";
 import "./index.css";
-import Header from "./sections/header";
 import Hero from "./sections/hero";
+import Header from "./sections/header";
 
 const AboutUs = lazy(() => import("./sections/about-us"));
 const Banner = lazy(() => import("./sections/banner"));
