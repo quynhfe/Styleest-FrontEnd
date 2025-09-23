@@ -53,18 +53,6 @@
 }
 
 @layer components {
-  .nav-title {
-    @apply tracking-(--t-32) text-nowrap h-fit hover:text-(--color-text-dark) hover:cursor-pointer hover:origin-(--transform-ogirin) lg:leading-6 text-base uppercase font-medium content-center;
-  }
-
-  .nav-logo-box {
-    @apply cursor-pointer p-2 inline-flex items-center justify-center bg-opacity hover:text-(--color-text-dark) hover:bg-white rounded-full;
-  }
-
-  .nav-logo-icon {
-    @apply fill-current md:w-6 w-4 md:h-6 h-4;
-  }
-
   .img-taysonf {
     @apply xl:w-[486px] xl:h-[600px] lg:w-[384px] lg:h-[474px] h-78 md:h-[274px] md:w-[222px] w-full row-start-1 md:col-start-1 md:col-span-1;
   }

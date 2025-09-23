@@ -36,6 +36,88 @@ function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const Nav = () => {
+    const navLink = [
+      { id: 1, title: "About us", href: "#about-us" },
+      { id: 2, title: "Collaboration", href: "#collaboration" },
+      { id: 3, title: "Product", href: "#product" },
+      { id: 4, title: "Articles", href: "#articles" },
+    ];
+
+    return (
+      <div
+        className={`font-(family-name:--font-header)  flex flex-col lg:flex-row items-center  lg:justify-between lg:gap-9 gap-8 text-xl
+             `}>
+        {navLink.map((link) => (
+          <a
+            key={link.id}
+            href={link.href}
+            className='tracking-(--t-32) text-nowrap h-fit hover:text-(--color-text-dark) hover:cursor-pointer hover:origin-(--transform-ogirin) lg:leading-6 text-base uppercase font-medium content-center'>
+            {link.title}
+          </a>
+        ))}
+      </div>
+    );
+  };
+
+  const NavLogo = () => {
+    const logo = [
+      {
+        id: 1,
+        name: "search",
+        d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z",
+      },
+      {
+        id: 2,
+        name: "cart",
+        d: "M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-8 4c0 .55-.45 1-1 1s-1-.45-1-1V8h2v2zm2-6c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm4 6c0 .55-.45 1-1 1s-1-.45-1-1V8h2v2z",
+      },
+      {
+        id: 3,
+        name: "close",
+        d: "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",
+      },
+      {
+        id: 4,
+        name: "menu",
+        d: "M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z",
+      },
+    ];
+
+    const shouldHideIcon = (name) =>
+      (name === "menu" && isMenuOpen) || (name === "close" && !isMenuOpen);
+
+    return (
+      <div className='flex items-center h-fit relative justify-between md:gap-5 gap-2.5  '>
+        {logo.map((item) => (
+          <span
+            key={item.id}
+            className={`
+              ${
+                item.name === "menu" || item.name === "close" ? "lg:hidden" : ""
+              }
+                cursor-pointer p-2  items-center justify-center bg-opacity hover:text-(--color-text-dark) hover:bg-white rounded-full  ${
+                  shouldHideIcon(item.name) ? "hidden" : "inline-flex"
+                }`}
+            onClick={
+              item.name === "menu" || item.name === "close"
+                ? handleOnclickMenu
+                : null
+            }>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 24 24'
+              className={`fill-current md:w-6 w-4 md:h-6 h-4 ${item.name}`}>
+              <path d={item.d}></path>
+            </svg>
+          </span>
+        ))}
+        <div className=' lg:block hidden w-35 h-11.75'>
+          <Login />
+        </div>
+      </div>
+    );
+  };
   const Login = () => {
     return (
       <Button
@@ -74,76 +156,13 @@ function Header() {
                   ? "lg:bg-inherit  transform  transition-all transition-discretess duration-300 ease-in-out translate-y-44 md:translate-y-64.25 z-[-1]   p-0 md:py-20 lg:py-0 "
                   : "lg:block lg:pb-0 lg:opacity-100 hidden opacity-0 "
               }`}>
-              <div
-                className={`font-(family-name:--font-header)  flex flex-col lg:flex-row items-center  lg:justify-between lg:gap-9 gap-8 text-xl
-             `}>
-                <a
-                  href='#about-us'
-                  className='nav-title'>
-                  About us
-                </a>
-                <a
-                  href='#collaboration'
-                  className='nav-title'>
-                  Collaboration
-                </a>
-                <a
-                  href='#product'
-                  className='nav-title'>
-                  Product
-                </a>
-                <a
-                  href='#articles'
-                  className='nav-title'>
-                  Articles
-                </a>
-              </div>
+              <Nav />
               <div
                 className={`${isMenuOpen ? "block " : "hidden"} w-35 h-11.75`}>
                 <Login />
               </div>
             </div>
-            <div className='flex items-center h-fit relative justify-between md:gap-5 gap-2.5  '>
-              <span className='nav-logo-box'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 24 24'
-                  className='nav-logo-icon'>
-                  <path d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'></path>
-                </svg>
-              </span>
-              <span className='nav-logo-box'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 24 24'
-                  className='nav-logo-icon'>
-                  <path d='M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-8 4c0 .55-.45 1-1 1s-1-.45-1-1V8h2v2zm2-6c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm4 6c0 .55-.45 1-1 1s-1-.45-1-1V8h2v2z'></path>
-                </svg>
-              </span>
-
-              <span
-                className='nav-logo-box lg:hidden'
-                onClick={handleOnclickMenu}>
-                {isMenuOpen ? (
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 24 24'
-                    className='nav-logo-icon'>
-                    <path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'></path>
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 24 24'
-                    className='nav-logo-icon'>
-                    <path d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'></path>
-                  </svg>
-                )}
-              </span>
-              <div className=' lg:block hidden w-35 h-11.75'>
-                <Login />
-              </div>
-            </div>
+            <NavLogo />
           </nav>
         </div>
       </header>
