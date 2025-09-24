@@ -1,40 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Button from "../components/button";
+import * as motion from "motion/react-client";
+import { useBreakpoint } from "../hooks/useBreakpoint";
+
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
+  const breakpoint = useBreakpoint();
 
   const handleOnclickMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const getBreakpoint = (width) => {
-    if (width < 640) return "base";
-    if (width < 768) return "sm";
-    if (width < 1024) return "md";
-    if (width < 1280) return "lg";
-    if (width < 1536) return "xl";
-    return "2xl";
-  };
   useEffect(() => {
-    let prevBp = getBreakpoint(window.innerWidth);
-
-    const handleResize = () => {
-      let resizeTimer;
-      const currBp = getBreakpoint(window.innerWidth);
-
-      if (prevBp !== currBp) {
-        setIsMenuOpen(false);
-        setIsResizing(true);
-        prevBp = currBp;
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => setIsResizing(false), 200);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    setIsMenuOpen(false);
+    setIsResizing(true);
+  }, [breakpoint]);
 
   const Nav = () => {
     const navLink = [
@@ -128,13 +109,20 @@ function Header() {
     );
   };
   return (
-    <div className='relative z-1 top-0'>
+    <motion.div
+      className='relative z-1 top-0'
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 1,
+        delay: 0.5,
+      }}>
       <header
         className={` py-8.25  lg:py-4 md:pt-11 lg:border-b-[0.5px] lg:border-(--color-boxshadow-header)  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) ${
           isMenuOpen ? `lg:bg-inherit  ` : ``
         }`}>
         <div
-          className={` block lg:hidden  bg-inherit border-b-[0.5px] border-(--color-boxshadow-header) h-[461px] md:h-[639px] transform  transition-discretess -translate-y-98.75 md:-translate-y-140.75 w-full absolute z-[-2]  left-0
+          className={` block lg:hidden  bg-inherit border-b-[0.5px] border-(--color-boxshadow-header) h-[461px] md:h-[639px] transform  transition-discrete -translate-y-98.75 md:-translate-y-140.75 w-full absolute z-[-2]  left-0
           ${
             isResizing
               ? "transition-none"
@@ -153,7 +141,7 @@ function Header() {
             <div
               className={` leading-0 bg-inherit    mx-auto w-full lg:w-fit lg:min-h-fit lg:relative absolute  min-h-(--height-mid)  flex flex-col gap-8 justify-end items-center content-center  left-0   ${
                 isMenuOpen
-                  ? "lg:bg-inherit  transform  transition-all transition-discretess duration-300 ease-in-out translate-y-44 md:translate-y-64.25 z-[-1]   p-0 md:py-20 lg:py-0 "
+                  ? "lg:bg-inherit  transform  transition-all transition-discrete duration-300 ease-in-out translate-y-44 md:translate-y-64.25 z-[-1]   p-0 md:py-20 lg:py-0 "
                   : "lg:block lg:pb-0 lg:opacity-100 hidden opacity-0 "
               }`}>
               <Nav />
@@ -166,7 +154,7 @@ function Header() {
           </nav>
         </div>
       </header>
-    </div>
+    </motion.div>
   );
 }
 
