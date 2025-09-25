@@ -1,14 +1,22 @@
 import React from "react";
 import aboutData from "../data/about.json";
-
 import ContentTitle from "../components/content-title";
 import ContentDescription from "../components/content-des";
 import Link from "../components/btn-link";
+import * as motion from "motion/react-client";
 
 function CollaborationSection({ sectionData }) {
   return (
     <div className={sectionData.layout.container}>
-      <div className={sectionData.layout.image1Container}>
+      <motion.div
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 100 }}
+        transition={{
+          duration: 1,
+          delay: 0.5,
+        }}
+        viewport={{ once: true }}
+        className={sectionData.layout.image1Container}>
         <img
           className='max-md:max-w-200 max-md:h-78 md:max-w-56 md:max-h-69 lg:max-h-120 lg:max-w-100 xl:max-h-200'
           loading='lazy'
@@ -16,8 +24,16 @@ function CollaborationSection({ sectionData }) {
           src={sectionData.image1.url}
           alt={sectionData.image1.alt}
         />
-      </div>
-      <div className={sectionData.layout.image2Container}>
+      </motion.div>
+      <motion.div
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 100 }}
+        transition={{
+          duration: 1,
+          delay: 0.5,
+        }}
+        viewport={{ once: true }}
+        className={sectionData.layout.image2Container}>
         <img
           className='max-md:w-40 max-md:h-29.5 md:max-w-56 md:max-h-45 lg:max-h-100 lg:max-w-100 '
           loading='lazy'
@@ -25,12 +41,20 @@ function CollaborationSection({ sectionData }) {
           src={sectionData.image2.url}
           alt={sectionData.image2.alt}
         />
-      </div>
-      <div className={sectionData.layout.textContainer}>
+      </motion.div>
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        whileInView={{ x: 0, y: 0, opacity: 1 }}
+        transition={{
+          duration: 1,
+          delay: 0.5,
+        }}
+        viewport={{ once: true }}
+        className={sectionData.layout.textContainer}>
         <ContentTitle>{sectionData.title}</ContentTitle>
         <ContentDescription>{sectionData.description}</ContentDescription>
         <Link href={`/collection/${sectionData.slug}`}>See Collection</Link>
-      </div>
+      </motion.div>
     </div>
   );
 }
