@@ -27,7 +27,9 @@ function Footer() {
 
   return (
     <div className='pt-16 lg:pb-15.5 text-center bg-text-dark relative w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-xl)'>
-      <Motion className='lg:text-start lg:grid-flow-col-dense grid grid-flow-row max-w-300 mx-auto '>
+      <Motion
+        delay={0.3}
+        className='lg:text-start lg:grid-flow-col-dense grid grid-flow-row max-w-300 mx-auto '>
         <div className='flex flex-col gap-6 h-fit lg:col-span-1 xl:w-[379px] lg:w-[338px] mb-8.75 lg:mb-0'>
           <h1 className='tracking-(--t-84) text-white text-[42px] font-(family-name:--font-header) font-bold uppercase'>
             Styleest
