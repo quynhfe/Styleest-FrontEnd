@@ -157,7 +157,7 @@ function Feedback() {
                 className='flex-shrink-0 md:p-0 p-2 w-full'
                 style={{ width: `${100 / extendedFeedbacks.length}%` }}>
                 <div className='mt-13.75 xl:mt-18 xl:gap-x-31.75 md:gap-x-21.25 md:text-start text-center grid grid-cols-2 grid-flow-row-dense h-fit xl:grid-flow-col-dense xl:grid-cols-none'>
-                  <div className='relative col-span-full md:flex md:flex-col md:gap-6 md:justify-center md:py-12 xl:py-7.75 md:col-span-1 text-(--color-text-dark-primary) md:col-start-2'>
+                  <div className='relative col-span-full md:flex md:flex-col md:gap-6 md:justify-center md:py-12 xl:py-7.75 md:col-span-1 text-text-dark-primary md:col-start-2'>
                     <div className='absolute left-1/3 md:left-[-33px] md:top-2 lg:top-10 xl:top-[-30px] top-[-40px] w-fit z-[-1] pointer-events-none'>
                       <img
                         decoding='async'

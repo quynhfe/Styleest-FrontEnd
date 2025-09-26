@@ -146,7 +146,7 @@ function NewArrival() {
         <Title className={"mb-11.5 "}>New Arrival</Title>
         <TitlePrimary>Explore our latest fashion arrivals</TitlePrimary>
         <div className='flex justify-between items-center h-fit mt-6'>
-          <p className='text-(--color-text-grey) tracking-(--t-16)'>
+          <p className='text-text-grey tracking-(--t-16)'>
             {items.length} items
           </p>
           <Link className='mt-0'>See All Items</Link>
@@ -177,7 +177,7 @@ function NewArrival() {
                   src={item.img}
                   alt={item.name}
                 />
-                <div className='h-[47px] w-64.5 md:w-full md:max-w-100 lg:max-w-70.5 absolute z-1 bottom-[26px] flex text-(--color-text-dark) items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
+                <div className='h-[47px] w-64.5 md:w-full md:max-w-100 lg:max-w-70.5 absolute z-1 bottom-[26px] flex text-text-dark items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
                   <Button
                     animation={false}
                     className=' mx-5 w-full '>
@@ -187,16 +187,16 @@ function NewArrival() {
               </div>
 
               <div className='w-full flex flex-col gap-2 mt-6 text-start items-start'>
-                <p className='lg:text-xl text-(--color-text-dark) font-(family-name:--font-header)'>
+                <p className='lg:text-xl text-text-dark font-(family-name:--font-header)'>
                   {item.name}
                 </p>
                 <div className='flex gap-3 font-medium text-sm lg:text-(length:--text-16)'>
                   {item.salePrice && (
-                    <p className='tracking-(--t-14) text-(--color-text-brown) line-through'>
+                    <p className='tracking-(--t-14) text-text-brown line-through'>
                       {item.salePrice} USD
                     </p>
                   )}
-                  <p className='tracking-(--t-14) text-(--color-text-dark)'>
+                  <p className='tracking-(--t-14) text-text-dark'>
                     {item.price} USD
                   </p>
                 </div>
@@ -210,15 +210,15 @@ function NewArrival() {
                         onClick={() => handleColorClick(item.id, color)}
                         className={`flex justify-center items-center w-5 h-5 rounded-full border-1 cursor-pointer transition-colors duration-300 ease-in ${
                           isActive
-                            ? "bg-none border-(--color-border-item-active)"
-                            : `border-(--color-border-item) ${colorMap[color]}`
+                            ? "bg-none border-border-item-active"
+                            : `border-border-item ${colorMap[color]}`
                         }`}>
                         <div
                           className={`w-3 h-3 cursor-pointer transition-shadow duration-300 ease-in-out rounded-full ${
                             colorMap[color]
                           } ${
                             isActive
-                              ? "shadow-(--color-boxshadow-items-color)"
+                              ? "shadow-boxshadow-items-color"
                               : "shadow-none"
                           }`}
                         />

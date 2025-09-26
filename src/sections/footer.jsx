@@ -38,10 +38,10 @@ function Footer() {
             story of sophistication and contemporary allure.
           </p>
           <div className='flex justify-center lg:justify-start gap-2'>
-            <BsTwitterX className=' w-6 h-6 p-[5.5px] text-(--color-text-dark-muted)' />
-            <FaInstagram className=' w-6 h-6 p-[5.5px] text-(--color-text-dark-muted)' />
-            <FaLinkedinIn className=' w-6 h-6 p-[5.5px] text-(--color-text-dark-muted)' />
-            <FaFacebook className=' w-6 h-6 text-(--color-text-dark-muted) p-1' />
+            <BsTwitterX className=' w-6 h-6 p-[5.5px] text-text-dark-muted' />
+            <FaInstagram className=' w-6 h-6 p-[5.5px] text-text-dark-muted' />
+            <FaLinkedinIn className=' w-6 h-6 p-[5.5px] text-text-dark-muted' />
+            <FaFacebook className=' w-6 h-6 text-text-dark-muted p-1' />
           </div>
         </div>
 

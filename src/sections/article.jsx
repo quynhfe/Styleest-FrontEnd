@@ -27,7 +27,7 @@ function Articles() {
                 className={`group md:py-11 lg:gap-x-8 text-start grid grid-flow-row-dense md:grid-cols-2 gap-4 pb-5 ${
                   index === articles.length - 1
                     ? ""
-                    : "border-b-1 border-(--color-text-dark-muted)"
+                    : "border-b-1 border-text-dark-muted"
                 }`}>
                 <div className='   object-fill md:object-cover object-center overflow-hidden h-35 w-full md:flex md:justify-end md:col-start-2 lg:col-start-3'>
                   <img
@@ -38,10 +38,10 @@ function Articles() {
                     alt={article?.title}></img>
                 </div>
                 <div className='grid grid-flow-row-dense gap-4 md:gap-2.5 lg:grid-flow-col-dense lg:col-span-2 items-center lg:gap-8 xl:gap-15'>
-                  <p className='xl:text-2xl mt-6 mb-2.5 font-bold text-[20px] font-(family-name:--font-header) md:text-2xl m-0 text-(--color-text-dark) lg:col-span-1 lg:leading-[38.4px] hover:underline decoration-(--color-text-dark)'>
+                  <p className='xl:text-2xl mt-6 mb-2.5 font-bold text-[20px] font-(family-name:--font-header) md:text-2xl m-0 text-text-dark lg:col-span-1 lg:leading-[38.4px] hover:underline decoration-text-dark'>
                     {article?.title}
                   </p>
-                  <div className='xl:pr-12 tracking-(--t-16) flex items-center gap-5.25 text-(--color-text-dark-primary) font-medium'>
+                  <div className='xl:pr-12 tracking-(--t-16) flex items-center gap-5.25 text-text-dark-primary font-medium'>
                     <p className='article-date'>{article?.date}</p>
                     <div className='rounded-full w-2 h-2 md:w-2.5 md:h-2.5 bg-dot'></div>
                     <p className='article-time'>{article?.time} min read</p>

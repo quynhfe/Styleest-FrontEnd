@@ -56,7 +56,7 @@ function Category() {
                 <div
                   className={`hidden xl:block xl:absolute xl:z-5 xl:col-span-1 xl:row-span-1 xl:bg-[linear-gradient(180deg,rgba(17,17,17,0)_0%,rgb(17,17,17)_100%)] w-full h-full bottom-0 xl:m-0`}></div>
                 <div
-                  className={`xl:text-white lg:p-0 xl:m-0 xl:px-6   md:col-span-2 lg:col-span-1 md:row-span-1 text-(--color-text-dark) xl:absolute xl:h-78.5 px-6 bottom-0 z-10 xl:col-span-1 xl:row-span-1 ${
+                  className={`xl:text-white lg:p-0 xl:m-0 xl:px-6   md:col-span-2 lg:col-span-1 md:row-span-1 text-text-dark xl:absolute xl:h-78.5 px-6 bottom-0 z-10 xl:col-span-1 xl:row-span-1 ${
                     infoBoxPosition[categorie?.name]
                   } xl:m-0`}>
                   <p className='md:w-86.25 xl:text-(length:--text-32) mt-6 mb-2.5 font-bold text-[20px] font-(family-name:--font-header) xl:translate-y-55 xl:group-hover:translate-y-0 col-span-1 transform transition duration-400'>

@@ -15,6 +15,9 @@ function Header() {
   useEffect(() => {
     setIsMenuOpen(false);
     setIsResizing(true);
+    const timer = setTimeout(() => setIsResizing(false), 50);
+
+    return () => clearTimeout(timer);
   }, [breakpoint]);
 
   const Nav = () => {
@@ -33,7 +36,7 @@ function Header() {
           <a
             key={link.id}
             href={link.href}
-            className='tracking-(--t-32) text-nowrap h-fit hover:text-(--color-text-dark) hover:cursor-pointer hover:origin-(--transform-ogirin) lg:leading-6 text-base uppercase font-medium content-center'>
+            className='tracking-(--t-32) text-nowrap h-fit hover:text-text-dark hover:cursor-pointer hover:origin-(--transform-ogirin) lg:leading-6 text-base uppercase font-medium content-center'>
             {link.title}
           </a>
         ))}
@@ -77,7 +80,7 @@ function Header() {
               ${
                 item.name === "menu" || item.name === "close" ? "lg:hidden" : ""
               }
-                cursor-pointer p-2  items-center justify-center bg-opacity hover:text-(--color-text-dark) hover:bg-white rounded-full  ${
+                cursor-pointer p-2  items-center justify-center bg-opacity hover:text-text-dark hover:bg-white rounded-full  ${
                   shouldHideIcon(item.name) ? "hidden" : "inline-flex"
                 }`}
             onClick={
@@ -111,18 +114,18 @@ function Header() {
   return (
     <motion.div
       className='relative z-1 top-0'
-      initial={{ y: -100, opacity: 0 }}
+      initial={{ y: "-100%", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
         duration: 1,
         delay: 0.5,
       }}>
       <header
-        className={` py-8.25  lg:py-4 md:pt-11 lg:border-b-[0.5px] lg:border-(--color-boxshadow-header)  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) ${
+        className={` py-8.25  lg:py-4 md:pt-11 lg:border-b-[0.5px] lg:border-boxshadow-header  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) ${
           isMenuOpen ? `lg:bg-inherit  ` : ``
         }`}>
         <div
-          className={` block lg:hidden  bg-inherit border-b-[0.5px] border-(--color-boxshadow-header) h-[461px] md:h-[639px] transform  transition-discrete -translate-y-98.75 md:-translate-y-140.75 w-full absolute z-[-2]  left-0
+          className={` block lg:hidden  bg-inherit border-b-[0.5px] border-boxshadow-header h-[461px] md:h-[639px] transform transition transition-discrete duration-400 ease-in-out  w-full absolute z-[-2]  left-0
           ${
             isResizing
               ? "transition-none"
@@ -131,7 +134,7 @@ function Header() {
           ${
             isMenuOpen
               ? "bg-text-dark translate-y-[-109px]  md:translate-y-[-125px] "
-              : ""
+              : "-translate-y-98.75 md:-translate-y-140.75"
           }`}></div>
         <div className='max-w-300 mx-auto'>
           <nav className='lg:h-fit h-auto md:mx-0  text-white  flex justify-between items-center '>

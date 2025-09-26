@@ -70,11 +70,11 @@
   }
 
   .cus-name {
-    @apply text-(--color-text-dark) xl:text-(length:--text-20);
+    @apply text-text-dark xl:text-(length:--text-20);
   }
 
   .cus-job {
-    @apply text-sm text-(--color-text-grey);
+    @apply text-sm text-text-grey;
   }
 
   .img-taysonf img {
@@ -90,7 +90,7 @@
   }
 
   .footer p {
-    @apply font-medium text-(--color-text-dark-muted);
+    @apply font-medium text-text-dark-muted;
   }
 }
 
