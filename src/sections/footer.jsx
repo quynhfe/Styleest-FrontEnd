@@ -1,7 +1,7 @@
 import data from "../data/footer.json";
 import { FaInstagram, FaLinkedinIn, FaFacebook } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
-
+import Motion from "../components/motion";
 function FooterColumn({ title, list, className = "" }) {
   return (
     <div className={className}>
@@ -27,7 +27,7 @@ function Footer() {
 
   return (
     <div className='pt-16 lg:pb-15.5 text-center bg-text-dark relative w-full px-(--mx-sm) md:px-(--mx-md) xl:px-(--mx-xl)'>
-      <div className='lg:text-start lg:grid-flow-col-dense grid grid-flow-row max-w-300 mx-auto '>
+      <Motion className='lg:text-start lg:grid-flow-col-dense grid grid-flow-row max-w-300 mx-auto '>
         <div className='flex flex-col gap-6 h-fit lg:col-span-1 xl:w-[379px] lg:w-[338px] mb-8.75 lg:mb-0'>
           <h1 className='tracking-(--t-84) text-white text-[42px] font-(family-name:--font-header) font-bold uppercase'>
             Styleest
@@ -65,7 +65,7 @@ function Footer() {
             />
           </div>
         </div>
-      </div>
+      </Motion>
     </div>
   );
 }

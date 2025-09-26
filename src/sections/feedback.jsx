@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import feedbacks from "../data/feedback.json";
 import TitlePrimary from "../components/title-primary";
+import Motion from "../components/motion";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 function Feedback() {
+  const isMobile = useMediaQuery("(max-width: 767px)");
   const totalFeedbacks = feedbacks.length;
 
   const DEFAULT_DURATION = 400;
@@ -110,7 +113,12 @@ function Feedback() {
     <div className='w-full xl:py-25 py-15 bg-bg-secondary px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) relative'>
       <div className='max-w-300 mx-auto'>
         <div className='md:flex md:justify-between w-full'>
-          <TitlePrimary>What our customer says</TitlePrimary>
+          <Motion
+            key={isMobile ? "top" : "left"}
+            variant={isMobile ? "top" : "left"}
+            delay={0.3}>
+            <TitlePrimary>What our customer says</TitlePrimary>
+          </Motion>
           <div className='md:flex hidden md:gap-6'>
             <div>
               <img
@@ -195,7 +203,7 @@ function Feedback() {
                     <img
                       decoding='async'
                       loading='lazy'
-                      className='md:hidden block xl:block w-full h-full object-cover'
+                      className='max-md:w-12 max-md:h-12 md:hidden block xl:block w-full h-full object-cover'
                       src={fb?.product?.img}
                       alt={fb?.product?.title}
                     />

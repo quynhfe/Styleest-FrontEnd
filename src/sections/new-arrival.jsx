@@ -6,11 +6,12 @@ import TitlePrimary from "../components/title-primary";
 import Button from "../components/button";
 import Motion from "../components/motion";
 import { useMediaQuery } from "../hooks/useMediaQuery";
+import { useBreakpoint } from "../hooks/useBreakpoint";
 
 function NewArrival() {
   const total = items.length;
   const transitionDuration = 500;
-
+  const bp = useBreakpoint();
   const extendedItems = useMemo(
     () =>
       total <= 1
@@ -131,6 +132,15 @@ function NewArrival() {
     blue: "bg-item-blue",
   };
 
+  const getDelay = (index) => {
+    if (isMobile) return 0.5;
+    let cols;
+    if (bp === "xl") cols = 4;
+    else cols = 3;
+    const colIndex = index % cols;
+    return 0.5 * (colIndex + 0.3);
+  };
+
   return (
     <div className='lg:z-0 bg-bg-secondary w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) text-center gap-6 items-center justify-center font-bold md:pb-20 py-15 xl:pt-66.5 md:pt-52.75 lg:pt-53.5 pb-15 overflow-hidden'>
       <div className='max-w-300 mx-auto'>
@@ -167,17 +177,18 @@ function NewArrival() {
           {(isMobile ? extendedItems : items).map((item, index) => (
             <Motion
               key={`${item.originalId || item.id}-${index}`}
-              className='max-md:w-[258px] xl:w-[282px] lg:max-w-[391px] w-full md:col-span-1 md:row-span-1 flex flex-col items-center justify-center flex-shrink-0'
+              delay={getDelay(index)}
+              className='max-md:w-[258px]  xl:w-[282px] lg:max-w-[391px] w-full md:col-span-1 md:row-span-1 flex flex-col items-center justify-center flex-shrink-0'
               onDragStart={(e) => e.preventDefault()}>
               <div className='h-82 w-64.5 md:w-full   overflow-hidden flex justify-start relative group'>
                 <img
                   decoding='async'
                   loading='lazy'
-                  className='w-64.5 h-82 md:w-full  md:h-full md:max-w-100 lg:max-w-70.5 object-cover object-top transition-transform duration-300 origin-top hover:scale-120 select-none'
+                  className='w-64.5 h-82 md:w-full  md:h-full md:max-w-100 lg:max-w-91.25 object-cover object-top transition-transform duration-300 origin-top hover:scale-120 select-none'
                   src={item.img}
                   alt={item.name}
                 />
-                <div className='h-[47px] w-64.5 md:w-full md:max-w-100 lg:max-w-70.5 absolute z-1 bottom-[26px] flex text-text-dark items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
+                <div className='h-[47px] w-64.5 md:w-full  absolute z-1 bottom-[26px] flex text-text-dark items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300'>
                   <Button
                     animation={false}
                     className=' mx-5 w-full '>
