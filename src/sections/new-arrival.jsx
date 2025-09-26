@@ -4,17 +4,8 @@ import Link from "../components/btn-link";
 import Title from "../components/title-default";
 import TitlePrimary from "../components/title-primary";
 import Button from "../components/button";
-const useMediaQuery = (query) => {
-  const [matches, setMatches] = useState(false);
-  useEffect(() => {
-    const media = window.matchMedia(query);
-    const listener = () => setMatches(media.matches);
-    setMatches(media.matches);
-    media.addEventListener("change", listener);
-    return () => media.removeEventListener("change", listener);
-  }, [query]);
-  return matches;
-};
+import Motion from "../components/motion";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 function NewArrival() {
   const total = items.length;
@@ -143,13 +134,22 @@ function NewArrival() {
   return (
     <div className='lg:z-0 bg-bg-secondary w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) text-center gap-6 items-center justify-center font-bold md:pb-20 py-15 xl:pt-66.5 md:pt-52.75 lg:pt-53.5 pb-15 overflow-hidden'>
       <div className='max-w-300 mx-auto'>
-        <Title className={"mb-11.5 "}>New Arrival</Title>
-        <TitlePrimary>Explore our latest fashion arrivals</TitlePrimary>
+        <Motion variant='scale'>
+          <Title className='mb-11.5'>New Arrival</Title>
+        </Motion>
+        <Motion variant='scale'>
+          <TitlePrimary>Explore our latest fashion arrivals</TitlePrimary>
+        </Motion>
+
         <div className='flex justify-between items-center h-fit mt-6'>
-          <p className='text-text-grey tracking-(--t-16)'>
-            {items.length} items
-          </p>
-          <Link className='mt-0'>See All Items</Link>
+          <Motion variant='left'>
+            <p className='text-text-grey tracking-(--t-16)'>
+              {items.length} items
+            </p>
+          </Motion>
+          <Motion variant='right'>
+            <Link className='mt-0'>See All Items</Link>
+          </Motion>
         </div>
         <div
           ref={sliderRef}
@@ -165,7 +165,7 @@ function NewArrival() {
           onTransitionEnd={handleTransitionEnd}
           {...swipeHandlers}>
           {(isMobile ? extendedItems : items).map((item, index) => (
-            <div
+            <Motion
               key={`${item.originalId || item.id}-${index}`}
               className='max-md:w-[258px] xl:w-[282px] lg:max-w-[391px] w-full md:col-span-1 md:row-span-1 flex flex-col items-center justify-center flex-shrink-0'
               onDragStart={(e) => e.preventDefault()}>
@@ -227,7 +227,7 @@ function NewArrival() {
                   })}
                 </div>
               </div>
-            </div>
+            </Motion>
           ))}
         </div>
       </div>

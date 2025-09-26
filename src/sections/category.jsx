@@ -3,6 +3,8 @@ import Link from "../components/btn-link";
 import Title from "../components/title-default";
 import TitlePrimary from "../components/title-primary";
 import categories from "../data/categories.json";
+import Motion from "../components/motion";
+import { useBreakpoint } from "../hooks/useBreakpoint";
 const imgPosition = {
   Men: "object-[center_-100px] md:object-[center_-70px] lg:object-[center_-130px] xl:object-center",
   Women:
@@ -27,21 +29,49 @@ const categoryPosition = {
 };
 
 function Category() {
+  const bp = useBreakpoint();
+
+  const getVariant = (bp, id) => {
+    if (bp === "base" || bp === "sm") return "bottom";
+
+    if (bp === "md") {
+      return id === 1 || id === 3 ? "top" : "bottom";
+    }
+
+    switch (id) {
+      case 1:
+        return "left";
+      case 2:
+        return "bottom";
+      case 3:
+        return "top";
+      default:
+        return "right";
+    }
+  };
+
   return (
     <div className='lg:py-30 md:py-20 md:text-start text-center pt-15 pb-7 px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl)'>
       <div className='max-w-300 mx-auto'>
-        <Title className='md:mb-4 lg:mb-6 text-center'>Categories</Title>
-        <TitlePrimary className={"lg:mb-15.25 mb-10 mt-3"}>
-          Curated products
-        </TitlePrimary>
+        <Motion
+          variant='scale'
+          duration={0.3}
+          delay={0.1}>
+          <Title className='md:mb-4 lg:mb-6 text-center'>Categories</Title>
+          <TitlePrimary className={"lg:mb-15.25 mb-10 mt-3"}>
+            Curated products
+          </TitlePrimary>
+        </Motion>
+
         <div className='md:grid md:grid-rows-4 gap-6 xl:gap-6 xl:grid-flow-row-dense xl:grid-cols-3 xl:grid-rows-2 xl:w-full xl:h-[640px]'>
           {categories.map((categorie) => {
             return (
-              <div
-                className={`xl:overflow-hidden xl:relative lg:grid-cols-2 flex flex-col md:row-span-1 md:grid md:grid-cols-3 md:grid-flow-col-dense items-center justify-center group xl:col-span-1 xl:grid-cols-1 xl:grid-rows-2 ${
+              <Motion
+                className={`xl:overflow-hidden xl:relative lg:grid-cols-2 flex flex-col  md:grid md:grid-cols-3 md:grid-flow-col-dense items-center justify-center group xl:col-span-1 xl:grid-cols-1 xl:grid-rows-2 ${
                   categoryPosition[categorie?.name]
                 }`}
-                key={categorie?.id}>
+                key={`${categorie.id}-${bp ?? "default"}`}
+                variant={getVariant(bp, categorie.id)}>
                 <div
                   className={`max-md:w-96 max-md:77.5 xl:w-full xl:h-full xl:row-span-2 lg:h-[272px] md:h-[221px] md:w-full md:col-span-1 xl:overflow-hidden h-[311px] w-[384px]`}>
                   <img
@@ -78,7 +108,7 @@ function Category() {
                   </div>
                   <Link className='block xl:hidden mb-9'>Explore Now</Link>
                 </div>
-              </div>
+              </Motion>
             );
           })}
         </div>

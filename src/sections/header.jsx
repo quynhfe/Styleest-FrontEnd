@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from "../components/button";
-import * as motion from "motion/react-client";
 import { useBreakpoint } from "../hooks/useBreakpoint";
+import Motion from "../components/motion";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -112,14 +112,10 @@ function Header() {
     );
   };
   return (
-    <motion.div
+    <Motion
       className='relative z-1 top-0'
-      initial={{ y: "-100%", opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{
-        duration: 1,
-        delay: 0.5,
-      }}>
+      variant='top'
+      trigger='none'>
       <header
         className={` py-8.25  lg:py-4 md:pt-11 lg:border-b-[0.5px] lg:border-boxshadow-header  w-full px-(--mx-sm) md:px-(--mx-md) lg:px-(--mx-lg) xl:px-(--mx-xl) ${
           isMenuOpen ? `lg:bg-inherit  ` : ``
@@ -157,7 +153,7 @@ function Header() {
           </nav>
         </div>
       </header>
-    </motion.div>
+    </Motion>
   );
 }
 

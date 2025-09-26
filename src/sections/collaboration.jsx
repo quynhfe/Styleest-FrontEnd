@@ -3,20 +3,14 @@ import aboutData from "../data/about.json";
 import ContentTitle from "../components/content-title";
 import ContentDescription from "../components/content-des";
 import Link from "../components/btn-link";
-import * as motion from "motion/react-client";
-
+import { useMediaQuery } from "../hooks/useMediaQuery";
+import Motion from "../components/motion";
 function CollaborationSection({ sectionData }) {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <div className={sectionData.layout.container}>
-      <motion.div
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 100 }}
-        transition={{
-          duration: 1,
-          delay: 0.5,
-        }}
-        viewport={{ once: true }}
-        className={sectionData.layout.image1Container}>
+      <Motion className={sectionData.layout.image1Container}>
         <img
           className='max-md:max-w-200 max-md:h-78 md:max-w-56 md:max-h-69 lg:max-h-120 lg:max-w-100 xl:max-h-200'
           loading='lazy'
@@ -24,16 +18,8 @@ function CollaborationSection({ sectionData }) {
           src={sectionData.image1.url}
           alt={sectionData.image1.alt}
         />
-      </motion.div>
-      <motion.div
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 100 }}
-        transition={{
-          duration: 1,
-          delay: 0.5,
-        }}
-        viewport={{ once: true }}
-        className={sectionData.layout.image2Container}>
+      </Motion>
+      <Motion className={sectionData.layout.image2Container}>
         <img
           className='max-md:w-40 max-md:h-29.5 md:max-w-56 md:max-h-45 lg:max-h-100 lg:max-w-100 '
           loading='lazy'
@@ -41,20 +27,17 @@ function CollaborationSection({ sectionData }) {
           src={sectionData.image2.url}
           alt={sectionData.image2.alt}
         />
-      </motion.div>
-      <motion.div
-        initial={{ x: -50, opacity: 0 }}
-        whileInView={{ x: 0, y: 0, opacity: 1 }}
-        transition={{
-          duration: 1,
-          delay: 0.5,
-        }}
-        viewport={{ once: true }}
+      </Motion>
+      <Motion
+        key={isMobile ? "bottom" : "left"}
+        variant={isMobile ? "bottom" : "left"}
         className={sectionData.layout.textContainer}>
         <ContentTitle>{sectionData.title}</ContentTitle>
         <ContentDescription>{sectionData.description}</ContentDescription>
-        <Link href={`/collection/${sectionData.slug}`}>See Collection</Link>
-      </motion.div>
+        <Motion variant='right'>
+          <Link href={`/collection/${sectionData.slug}`}>See Collection</Link>
+        </Motion>
+      </Motion>
     </div>
   );
 }
